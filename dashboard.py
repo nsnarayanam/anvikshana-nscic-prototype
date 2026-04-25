@@ -37,18 +37,16 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-GEOJSON_DIR   = os.path.join(BASE, "data", "geojson_ndvi")
-GEOJSON_18    = os.path.join(BASE, "data", "dicra_2018_geojson")
-MERGED_CSV    = os.path.join(GEOJSON_DIR, "mandal_ndvi_sm_merged.csv")
-ANNUAL_CSV    = os.path.join(GEOJSON_DIR, "mandal_ndvi_annual.csv")
-NDVI25_CSV    = os.path.join(GEOJSON_DIR, "mandal_ndvi_2025_full.csv")
-NDVI18_CSV    = os.path.join(GEOJSON_18,  "mandal_ndvi_2018_full.csv")
-PROJ_CSV      = os.path.join(BASE, "outputs", "drought_projections_2026_2040.csv")
-FEAT_CSV      = os.path.join(BASE, "outputs", "feature_importance.csv")
-NASA_CSV      = os.path.join(GEOJSON_DIR, "nasa_power_telangana.csv")
-SPI_CSV       = os.path.join(GEOJSON_DIR, "nasa_power_spi.csv")
-CLIMATE_CSV   = os.path.join(GEOJSON_DIR, "district_climate_summary.csv")
-IMD_CSV       = os.path.join(GEOJSON_DIR, "imd_live_rainfall.csv")
+GEOJSON_DIR = os.path.join(BASE, "data", "geojson_ndvi")
+MERGED_CSV  = os.path.join(GEOJSON_DIR, "mandal_ndvi_sm_merged.csv")
+ANNUAL_CSV  = os.path.join(GEOJSON_DIR, "mandal_ndvi_annual.csv")
+NDVI18_CSV  = os.path.join(GEOJSON_DIR, "mandal_ndvi_2018_full.csv")   # one new file
+PROJ_CSV    = os.path.join(BASE, "outputs", "drought_projections_2026_2040.csv")
+FEAT_CSV    = os.path.join(BASE, "outputs", "feature_importance.csv")
+NASA_CSV    = os.path.join(GEOJSON_DIR, "nasa_power_telangana.csv")
+SPI_CSV     = os.path.join(GEOJSON_DIR, "nasa_power_spi.csv")
+CLIMATE_CSV = os.path.join(GEOJSON_DIR, "district_climate_summary.csv")
+IMD_CSV     = os.path.join(GEOJSON_DIR, "imd_live_rainfall.csv")
 
 MONTH_MAP = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",
              7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
@@ -79,14 +77,11 @@ def load_all():
         mandal_count=("mandal","nunique"),
     ).reset_index()
     geojson_files = sorted([f for f in os.listdir(GEOJSON_DIR) if f.endswith(".geojson")])
-    # 2018 & 2025 full NDVI datasets for historical comparison
-    ndvi18, ndvi25 = None, None
+    # 2018 historical NDVI (only one new file needed — 2025 uses merged above)
+    ndvi18 = None
     if os.path.exists(NDVI18_CSV):
         ndvi18 = pd.read_csv(NDVI18_CSV)
         ndvi18["date"] = pd.to_datetime(ndvi18["date"])
-    if os.path.exists(NDVI25_CSV):
-        ndvi25 = pd.read_csv(NDVI25_CSV)
-        ndvi25["date"] = pd.to_datetime(ndvi25["date"])
     # NASA POWER data (optional - graceful fallback if not present)
     nasa, spi_df, climate = None, None, None
     if os.path.exists(NASA_CSV):
@@ -102,9 +97,9 @@ def load_all():
     imd_live = None
     if os.path.exists(IMD_CSV):
         imd_live = pd.read_csv(IMD_CSV)
-    return merged, annual, proj, feat, dist_summary, geojson_files, ndvi18, ndvi25, nasa, spi_df, climate, imd_live
+    return merged, annual, proj, feat, dist_summary, geojson_files, ndvi18, nasa, spi_df, climate, imd_live
 
-merged, annual, proj, feat_imp, dist_summary, geojson_files, ndvi18, ndvi25, nasa, spi_df, climate, imd_live = load_all()
+merged, annual, proj, feat_imp, dist_summary, geojson_files, ndvi18, nasa, spi_df, climate, imd_live = load_all()
 ALL_DISTRICTS = sorted(merged["district"].unique())
 ALL_DATES = sorted(merged["date"].dt.strftime("%Y-%m-%d").unique())
 
@@ -583,18 +578,33 @@ elif page == "🔁 2018 vs 2025 Comparison":
     st.markdown("### 🔁 Historical Drought Comparison — 2018 vs 2025")
     st.caption("2018: Declared drought year (all 33 districts) · 2025: Current monitoring year · DiCRA NDVI · 592 mandals")
 
-    if ndvi18 is None or ndvi25 is None:
-        st.warning("Comparison data not found. Ensure mandal_ndvi_2018_full.csv and mandal_ndvi_2025_full.csv are present.")
+    if ndvi18 is None:
+        st.warning("2018 data not found. Upload `data/geojson_ndvi/mandal_ndvi_2018_full.csv` to the repo.")
     else:
-        # ── Pre-compute summaries ─────────────────────────────────────────
+        # 2025 data comes from merged (already loaded, already on GitHub)
+        ndvi25 = merged[["date","month","mandal","district","longitude","latitude","ndvi_mean"]].copy()
+        ndvi25["vci"] = None  # VCI not pre-computed in merged; use ndvi_mean directly
+        # ── Pre-compute cross-year VCI using shared min/max envelope ─────
+        env = pd.concat([
+            ndvi18[["mandal","ndvi_mean"]],
+            ndvi25[["mandal","ndvi_mean"]]
+        ]).groupby("mandal").agg(env_min=("ndvi_mean","min"), env_max=("ndvi_mean","max")).reset_index()
+
+        ndvi18 = ndvi18.merge(env, on="mandal", how="left")
+        ndvi18["vci_x"] = ((ndvi18["ndvi_mean"] - ndvi18["env_min"]) /
+                           (ndvi18["env_max"] - ndvi18["env_min"]).clip(lower=0.001) * 100).clip(0, 100)
+
+        ndvi25 = ndvi25.merge(env, on="mandal", how="left")
+        ndvi25["vci_x"] = ((ndvi25["ndvi_mean"] - ndvi25["env_min"]) /
+                           (ndvi25["env_max"] - ndvi25["env_min"]).clip(lower=0.001) * 100).clip(0, 100)
+
         m18 = ndvi18.groupby("month")["ndvi_mean"].mean()
         m25 = ndvi25.groupby("month")["ndvi_mean"].mean()
-        vci18_overall = ndvi18["vci"].mean()
-        vci25_overall = ndvi25["vci_crossyear"].mean() if "vci_crossyear" in ndvi25.columns else ndvi25["vci"].mean() if "vci" in ndvi25.columns else None
+        vci18_overall = ndvi18["vci_x"].mean()
+        vci25_overall = ndvi25["vci_x"].mean()
 
-        d18 = ndvi18.groupby("district").agg(vci18=("vci","mean"), ndvi18=("ndvi_mean","mean"), lat=("latitude","mean"), lon=("longitude","mean")).reset_index()
-        vci_col25 = "vci_crossyear" if "vci_crossyear" in ndvi25.columns else "vci"
-        d25 = ndvi25.groupby("district").agg(vci25=(vci_col25,"mean"), ndvi25=("ndvi_mean","mean")).reset_index()
+        d18 = ndvi18.groupby("district").agg(vci18=("vci_x","mean"), ndvi18=("ndvi_mean","mean"), lat=("latitude","mean"), lon=("longitude","mean")).reset_index()
+        d25 = ndvi25.groupby("district").agg(vci25=("vci_x","mean"), ndvi25=("ndvi_mean","mean")).reset_index()
         dist_comp = d18.merge(d25, on="district").copy()
         dist_comp["vci_delta"] = dist_comp["vci25"] - dist_comp["vci18"]
         dist_comp["ndvi_delta"] = dist_comp["ndvi25"] - dist_comp["ndvi18"]
