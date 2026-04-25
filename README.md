@@ -76,11 +76,11 @@ Layer 4 — Application Layer
 
 | Page | Description |
 |------|-------------|
-| 📊 Overview | KPI cards · district scatter map · seasonal NDVI cycle · feature importance |
-| 🗺️ Mandal Drought Map | Real polygon choropleth · 592 DiCRA boundaries · date slider · NDVI/SM/CDSI toggle |
-| 📈 Seasonal Analysis | District time series · all-district NDVI heatmap · correlation analysis |
-| 🔮 2026–2040 Projections | Year slider · scenario toggle · uncertainty bands · SSP2 vs SSP5 |
-| 🤖 Model Validation | ROC-AUC · Brier Score · spatial CV methodology · data provenance |
+| Overview | KPI cards · district scatter map · seasonal NDVI cycle · feature importance |
+| Mandal Drought Map | Real polygon choropleth · 592 DiCRA boundaries · date slider · NDVI/SM/CDSI toggle |
+| Seasonal Analysis | District time series · all-district NDVI heatmap · correlation analysis |
+| 2026–2040 Projections | Year slider · scenario toggle · uncertainty bands · SSP2 vs SSP5 |
+| Model Validation | ROC-AUC · Brier Score · spatial CV methodology · data provenance |
 
 ---
 
