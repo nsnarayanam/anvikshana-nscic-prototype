@@ -1,0 +1,391 @@
+state,district,agro_zone,latitude,longitude,year,scenario,drought_probability,proj_rainfall_mm,proj_temp_c,base_drought_freq,ndvi_class,data_source
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2026,SSP2-4.5,0.4367,628.5,27.59,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2027,SSP2-4.5,0.4308,626.0,27.69,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2028,SSP2-4.5,0.4533,623.4,27.78,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2029,SSP2-4.5,0.4777,620.9,27.87,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2030,SSP2-4.5,0.4494,618.4,27.97,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2031,SSP2-4.5,0.4564,615.9,28.06,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2032,SSP2-4.5,0.4996,613.3,28.15,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2033,SSP2-4.5,0.4904,610.8,28.25,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2034,SSP2-4.5,0.4727,608.3,28.34,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2035,SSP2-4.5,0.5001,605.8,28.43,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2036,SSP2-4.5,0.4871,603.2,28.53,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2037,SSP2-4.5,0.4942,600.7,28.62,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2038,SSP2-4.5,0.5156,598.2,28.71,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2039,SSP2-4.5,0.4798,595.7,28.81,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2040,SSP2-4.5,0.4908,593.1,28.9,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2026,SSP5-8.5,0.4214,626.8,27.64,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2027,SSP5-8.5,0.4252,622.6,27.78,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2028,SSP5-8.5,0.4647,618.4,27.92,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2029,SSP5-8.5,0.4533,614.2,28.06,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2030,SSP5-8.5,0.4564,610.0,28.2,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2031,SSP5-8.5,0.5273,605.8,28.34,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2032,SSP5-8.5,0.5069,601.6,28.48,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2033,SSP5-8.5,0.5263,597.3,28.62,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2034,SSP5-8.5,0.5102,593.1,28.76,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2035,SSP5-8.5,0.5416,588.9,28.9,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2036,SSP5-8.5,0.5687,584.7,29.04,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2037,SSP5-8.5,0.5576,580.5,29.18,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2038,SSP5-8.5,0.6024,576.3,29.32,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2039,SSP5-8.5,0.5972,572.1,29.46,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kurnool,Rayalaseema,15.8281,78.0373,2040,SSP5-8.5,0.6179,567.9,29.6,0.42,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2026,SSP2-4.5,0.4757,550.8,27.59,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2027,SSP2-4.5,0.5325,548.6,27.69,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2028,SSP2-4.5,0.503,546.4,27.78,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2029,SSP2-4.5,0.4899,544.2,27.87,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2030,SSP2-4.5,0.5354,541.9,27.97,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2031,SSP2-4.5,0.5025,539.7,28.06,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2032,SSP2-4.5,0.5391,537.5,28.15,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2033,SSP2-4.5,0.5037,535.3,28.25,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2034,SSP2-4.5,0.5244,533.1,28.34,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2035,SSP2-4.5,0.563,530.9,28.43,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2036,SSP2-4.5,0.582,528.7,28.53,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2037,SSP2-4.5,0.5789,526.5,28.62,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2038,SSP2-4.5,0.5814,524.2,28.71,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2039,SSP2-4.5,0.586,522.0,28.81,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2040,SSP2-4.5,0.5708,519.8,28.9,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2026,SSP5-8.5,0.4801,549.3,27.64,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2027,SSP5-8.5,0.4999,545.6,27.78,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2028,SSP5-8.5,0.545,541.9,27.92,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2029,SSP5-8.5,0.5457,538.3,28.06,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2030,SSP5-8.5,0.5186,534.6,28.2,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2031,SSP5-8.5,0.5756,530.9,28.34,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2032,SSP5-8.5,0.5768,527.2,28.48,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2033,SSP5-8.5,0.5864,523.5,28.62,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2034,SSP5-8.5,0.6279,519.8,28.76,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2035,SSP5-8.5,0.6521,516.1,28.9,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2036,SSP5-8.5,0.6661,512.4,29.04,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2037,SSP5-8.5,0.6468,508.8,29.18,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2038,SSP5-8.5,0.6736,505.1,29.32,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2039,SSP5-8.5,0.7029,501.4,29.46,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Anantapur,Rayalaseema,14.6819,77.6006,2040,SSP5-8.5,0.7323,497.7,29.6,0.48,arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2026,SSP2-4.5,0.3765,713.1,27.59,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2027,SSP2-4.5,0.3885,710.3,27.69,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2028,SSP2-4.5,0.3763,707.4,27.78,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2029,SSP2-4.5,0.3807,704.5,27.87,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2030,SSP2-4.5,0.4271,701.7,27.97,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2031,SSP2-4.5,0.4443,698.8,28.06,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2032,SSP2-4.5,0.422,696.0,28.15,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2033,SSP2-4.5,0.4499,693.1,28.25,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2034,SSP2-4.5,0.4434,690.2,28.34,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2035,SSP2-4.5,0.4297,687.4,28.43,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2036,SSP2-4.5,0.4563,684.5,28.53,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2037,SSP2-4.5,0.4863,681.6,28.62,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2038,SSP2-4.5,0.4614,678.8,28.71,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2039,SSP2-4.5,0.5,675.9,28.81,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2040,SSP2-4.5,0.4229,673.0,28.9,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2026,SSP5-8.5,0.4079,711.2,27.64,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2027,SSP5-8.5,0.4048,706.5,27.78,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2028,SSP5-8.5,0.4088,701.7,27.92,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2029,SSP5-8.5,0.4284,696.9,28.06,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2030,SSP5-8.5,0.3987,692.1,28.2,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2031,SSP5-8.5,0.4461,687.4,28.34,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2032,SSP5-8.5,0.4698,682.6,28.48,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2033,SSP5-8.5,0.5045,677.8,28.62,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2034,SSP5-8.5,0.477,673.0,28.76,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2035,SSP5-8.5,0.4837,668.3,28.9,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2036,SSP5-8.5,0.5025,663.5,29.04,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2037,SSP5-8.5,0.5436,658.7,29.18,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2038,SSP5-8.5,0.5448,653.9,29.32,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2039,SSP5-8.5,0.5406,649.2,29.46,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Kadapa,Rayalaseema,14.4674,78.8242,2040,SSP5-8.5,0.5746,644.4,29.6,0.38,semi-arid,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2026,SSP2-4.5,0.256,983.1,27.59,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2027,SSP2-4.5,0.2774,979.1,27.69,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2028,SSP2-4.5,0.2481,975.2,27.78,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2029,SSP2-4.5,0.2596,971.2,27.87,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2030,SSP2-4.5,0.2625,967.3,27.97,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2031,SSP2-4.5,0.2452,963.3,28.06,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2032,SSP2-4.5,0.2845,959.4,28.15,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2033,SSP2-4.5,0.288,955.4,28.25,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2034,SSP2-4.5,0.2871,951.5,28.34,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2035,SSP2-4.5,0.2865,947.5,28.43,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2036,SSP2-4.5,0.2671,943.6,28.53,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2037,SSP2-4.5,0.2913,939.6,28.62,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2038,SSP2-4.5,0.2972,935.7,28.71,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2039,SSP2-4.5,0.2923,931.7,28.81,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2040,SSP2-4.5,0.3095,927.8,28.9,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2026,SSP5-8.5,0.2656,980.4,27.64,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2027,SSP5-8.5,0.3029,973.8,27.78,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2028,SSP5-8.5,0.2763,967.3,27.92,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2029,SSP5-8.5,0.2858,960.7,28.06,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2030,SSP5-8.5,0.287,954.1,28.2,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2031,SSP5-8.5,0.258,947.5,28.34,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2032,SSP5-8.5,0.3039,940.9,28.48,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2033,SSP5-8.5,0.3137,934.4,28.62,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2034,SSP5-8.5,0.3699,927.8,28.76,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2035,SSP5-8.5,0.325,921.2,28.9,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2036,SSP5-8.5,0.3432,914.6,29.04,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2037,SSP5-8.5,0.3449,908.0,29.18,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2038,SSP5-8.5,0.3307,901.5,29.32,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2039,SSP5-8.5,0.3855,894.9,29.46,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Nellore,Southern AP,14.4426,79.9865,2040,SSP5-8.5,0.3863,888.3,29.6,0.25,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2026,SSP2-4.5,0.3003,900.4,27.59,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2027,SSP2-4.5,0.2708,896.8,27.69,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2028,SSP2-4.5,0.3216,893.2,27.78,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2029,SSP2-4.5,0.2701,889.5,27.87,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2030,SSP2-4.5,0.3145,885.9,27.97,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2031,SSP2-4.5,0.3512,882.3,28.06,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2032,SSP2-4.5,0.2922,878.7,28.15,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2033,SSP2-4.5,0.3054,875.1,28.25,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2034,SSP2-4.5,0.3234,871.5,28.34,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2035,SSP2-4.5,0.3161,867.8,28.43,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2036,SSP2-4.5,0.2999,864.2,28.53,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2037,SSP2-4.5,0.3371,860.6,28.62,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2038,SSP2-4.5,0.3193,857.0,28.71,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2039,SSP2-4.5,0.3548,853.4,28.81,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2040,SSP2-4.5,0.3318,849.8,28.9,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2026,SSP5-8.5,0.3194,898.0,27.64,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2027,SSP5-8.5,0.2813,891.9,27.78,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2028,SSP5-8.5,0.2992,885.9,27.92,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2029,SSP5-8.5,0.3306,879.9,28.06,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2030,SSP5-8.5,0.2985,873.9,28.2,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2031,SSP5-8.5,0.3365,867.8,28.34,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2032,SSP5-8.5,0.3671,861.8,28.48,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2033,SSP5-8.5,0.3178,855.8,28.62,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2034,SSP5-8.5,0.3628,849.8,28.76,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2035,SSP5-8.5,0.3736,843.7,28.9,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2036,SSP5-8.5,0.3933,837.7,29.04,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2037,SSP5-8.5,0.3623,831.7,29.18,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2038,SSP5-8.5,0.3702,825.7,29.32,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2039,SSP5-8.5,0.4166,819.6,29.46,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Guntur,Coastal AP,16.3067,80.4365,2040,SSP5-8.5,0.4217,813.6,29.6,0.28,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2026,SSP2-4.5,0.2082,1037.8,27.59,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2027,SSP2-4.5,0.2134,1033.7,27.69,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2028,SSP2-4.5,0.1961,1029.5,27.78,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2029,SSP2-4.5,0.2176,1025.3,27.87,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2030,SSP2-4.5,0.2221,1021.2,27.97,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2031,SSP2-4.5,0.2053,1017.0,28.06,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2032,SSP2-4.5,0.2602,1012.8,28.15,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2033,SSP2-4.5,0.2357,1008.7,28.25,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2034,SSP2-4.5,0.2058,1004.5,28.34,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2035,SSP2-4.5,0.2461,1000.3,28.43,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2036,SSP2-4.5,0.2169,996.2,28.53,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2037,SSP2-4.5,0.2555,992.0,28.62,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2038,SSP2-4.5,0.2664,987.8,28.71,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2039,SSP2-4.5,0.2303,983.6,28.81,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2040,SSP2-4.5,0.2694,979.5,28.9,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2026,SSP5-8.5,0.2143,1035.1,27.64,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2027,SSP5-8.5,0.2286,1028.1,27.78,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2028,SSP5-8.5,0.2562,1021.2,27.92,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2029,SSP5-8.5,0.2196,1014.2,28.06,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2030,SSP5-8.5,0.2157,1007.3,28.2,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2031,SSP5-8.5,0.2193,1000.3,28.34,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2032,SSP5-8.5,0.2272,993.4,28.48,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2033,SSP5-8.5,0.2484,986.4,28.62,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2034,SSP5-8.5,0.2633,979.5,28.76,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2035,SSP5-8.5,0.2686,972.5,28.9,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2036,SSP5-8.5,0.2863,965.6,29.04,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2037,SSP5-8.5,0.2767,958.6,29.18,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2038,SSP5-8.5,0.3123,951.7,29.32,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2039,SSP5-8.5,0.2848,944.7,29.46,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Krishna,Coastal AP,16.61,80.7214,2040,SSP5-8.5,0.3514,937.8,29.6,0.2,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2026,SSP2-4.5,0.3376,847.6,27.59,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2027,SSP2-4.5,0.3132,844.2,27.69,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2028,SSP2-4.5,0.3141,840.8,27.78,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2029,SSP2-4.5,0.3504,837.4,27.87,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2030,SSP2-4.5,0.3415,834.0,27.97,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2031,SSP2-4.5,0.3656,830.6,28.06,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2032,SSP2-4.5,0.3661,827.2,28.15,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2033,SSP2-4.5,0.3605,823.8,28.25,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2034,SSP2-4.5,0.3504,820.4,28.34,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2035,SSP2-4.5,0.3424,817.0,28.43,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2036,SSP2-4.5,0.3692,813.6,28.53,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2037,SSP2-4.5,0.4008,810.2,28.62,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2038,SSP2-4.5,0.3934,806.7,28.71,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2039,SSP2-4.5,0.3698,803.3,28.81,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2040,SSP2-4.5,0.4037,799.9,28.9,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2026,SSP5-8.5,0.3374,845.3,27.64,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2027,SSP5-8.5,0.3217,839.7,27.78,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2028,SSP5-8.5,0.3523,834.0,27.92,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2029,SSP5-8.5,0.3604,828.3,28.06,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2030,SSP5-8.5,0.3464,822.6,28.2,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2031,SSP5-8.5,0.3865,817.0,28.34,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2032,SSP5-8.5,0.4009,811.3,28.48,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2033,SSP5-8.5,0.4216,805.6,28.62,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2034,SSP5-8.5,0.4315,799.9,28.76,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2035,SSP5-8.5,0.3934,794.3,28.9,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2036,SSP5-8.5,0.4129,788.6,29.04,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2037,SSP5-8.5,0.4527,782.9,29.18,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2038,SSP5-8.5,0.4635,777.2,29.32,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2039,SSP5-8.5,0.4745,771.6,29.46,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Prakasam,Southern AP,15.9129,79.0193,2040,SSP5-8.5,0.5523,765.9,29.6,0.32,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2026,SSP2-4.5,0.3162,883.5,27.59,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2027,SSP2-4.5,0.3324,879.9,27.69,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2028,SSP2-4.5,0.3336,876.4,27.78,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2029,SSP2-4.5,0.3325,872.8,27.87,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2030,SSP2-4.5,0.3181,869.3,27.97,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2031,SSP2-4.5,0.3445,865.7,28.06,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2032,SSP2-4.5,0.3188,862.2,28.15,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2033,SSP2-4.5,0.3346,858.6,28.25,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2034,SSP2-4.5,0.3347,855.1,28.34,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2035,SSP2-4.5,0.3511,851.5,28.43,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2036,SSP2-4.5,0.4008,848.0,28.53,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2037,SSP2-4.5,0.3223,844.4,28.62,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2038,SSP2-4.5,0.3786,840.9,28.71,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2039,SSP2-4.5,0.3378,837.3,28.81,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2040,SSP2-4.5,0.3658,833.8,28.9,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2026,SSP5-8.5,0.3308,881.1,27.64,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2027,SSP5-8.5,0.3195,875.2,27.78,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2028,SSP5-8.5,0.3059,869.3,27.92,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2029,SSP5-8.5,0.3224,863.3,28.06,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2030,SSP5-8.5,0.3598,857.4,28.2,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2031,SSP5-8.5,0.3411,851.5,28.34,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2032,SSP5-8.5,0.3696,845.6,28.48,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2033,SSP5-8.5,0.3759,839.7,28.62,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2034,SSP5-8.5,0.3717,833.8,28.76,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2035,SSP5-8.5,0.4375,827.9,28.9,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2036,SSP5-8.5,0.4173,822.0,29.04,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2037,SSP5-8.5,0.3742,816.0,29.18,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2038,SSP5-8.5,0.4286,810.1,29.32,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2039,SSP5-8.5,0.4219,804.2,29.46,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Chittoor,Rayalaseema,13.2172,79.1003,2040,SSP5-8.5,0.4625,798.3,29.6,0.3,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2026,SSP2-4.5,0.167,1151.4,27.59,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2027,SSP2-4.5,0.1835,1146.8,27.69,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2028,SSP2-4.5,0.1988,1142.1,27.78,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2029,SSP2-4.5,0.209,1137.5,27.87,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2030,SSP2-4.5,0.1706,1132.9,27.97,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2031,SSP2-4.5,0.1909,1128.3,28.06,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2032,SSP2-4.5,0.1911,1123.6,28.15,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2033,SSP2-4.5,0.1905,1119.0,28.25,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2034,SSP2-4.5,0.2419,1114.4,28.34,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2035,SSP2-4.5,0.2178,1109.8,28.43,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2036,SSP2-4.5,0.1875,1105.1,28.53,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2037,SSP2-4.5,0.2342,1100.5,28.62,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2038,SSP2-4.5,0.2613,1095.9,28.71,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2039,SSP2-4.5,0.2427,1091.3,28.81,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2040,SSP2-4.5,0.1948,1086.6,28.9,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2026,SSP5-8.5,0.1757,1148.3,27.64,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2027,SSP5-8.5,0.2163,1140.6,27.78,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2028,SSP5-8.5,0.1823,1132.9,27.92,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2029,SSP5-8.5,0.2109,1125.2,28.06,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2030,SSP5-8.5,0.2232,1117.5,28.2,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2031,SSP5-8.5,0.1949,1109.8,28.34,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2032,SSP5-8.5,0.218,1102.1,28.48,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2033,SSP5-8.5,0.1602,1094.3,28.62,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2034,SSP5-8.5,0.2104,1086.6,28.76,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2035,SSP5-8.5,0.2317,1078.9,28.9,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2036,SSP5-8.5,0.2178,1071.2,29.04,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2037,SSP5-8.5,0.2815,1063.5,29.18,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2038,SSP5-8.5,0.2263,1055.8,29.32,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2039,SSP5-8.5,0.2523,1048.1,29.46,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,East Godavari,Coastal AP,17.3253,81.7786,2040,SSP5-8.5,0.2699,1040.4,29.6,0.18,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2026,SSP2-4.5,0.2524,983.1,27.59,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2027,SSP2-4.5,0.1984,979.1,27.69,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2028,SSP2-4.5,0.2539,975.2,27.78,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2029,SSP2-4.5,0.2345,971.2,27.87,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2030,SSP2-4.5,0.2182,967.3,27.97,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2031,SSP2-4.5,0.2507,963.3,28.06,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2032,SSP2-4.5,0.2491,959.4,28.15,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2033,SSP2-4.5,0.2368,955.4,28.25,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2034,SSP2-4.5,0.2539,951.5,28.34,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2035,SSP2-4.5,0.2485,947.5,28.43,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2036,SSP2-4.5,0.2623,943.6,28.53,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2037,SSP2-4.5,0.277,939.6,28.62,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2038,SSP2-4.5,0.2993,935.7,28.71,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2039,SSP2-4.5,0.2466,931.7,28.81,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2040,SSP2-4.5,0.3178,927.8,28.9,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2026,SSP5-8.5,0.1876,980.4,27.64,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2027,SSP5-8.5,0.2303,973.8,27.78,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2028,SSP5-8.5,0.2519,967.3,27.92,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2029,SSP5-8.5,0.2526,960.7,28.06,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2030,SSP5-8.5,0.2414,954.1,28.2,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2031,SSP5-8.5,0.2567,947.5,28.34,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2032,SSP5-8.5,0.258,940.9,28.48,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2033,SSP5-8.5,0.2632,934.4,28.62,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2034,SSP5-8.5,0.2992,927.8,28.76,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2035,SSP5-8.5,0.2966,921.2,28.9,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2036,SSP5-8.5,0.2829,914.6,29.04,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2037,SSP5-8.5,0.3221,908.0,29.18,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2038,SSP5-8.5,0.3177,901.5,29.32,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2039,SSP5-8.5,0.3354,894.9,29.46,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,West Godavari,Coastal AP,16.9174,81.334,2040,SSP5-8.5,0.3393,888.3,29.6,0.22,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2026,SSP2-4.5,0.2273,998.0,27.59,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2027,SSP2-4.5,0.2365,994.0,27.69,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2028,SSP2-4.5,0.2666,990.0,27.78,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2029,SSP2-4.5,0.2678,986.0,27.87,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2030,SSP2-4.5,0.2591,982.0,27.97,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2031,SSP2-4.5,0.2658,978.0,28.06,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2032,SSP2-4.5,0.293,973.9,28.15,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2033,SSP2-4.5,0.2596,969.9,28.25,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2034,SSP2-4.5,0.2864,965.9,28.34,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2035,SSP2-4.5,0.2755,961.9,28.43,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2036,SSP2-4.5,0.2793,957.9,28.53,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2037,SSP2-4.5,0.3097,953.9,28.62,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2038,SSP2-4.5,0.3084,949.9,28.71,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2039,SSP2-4.5,0.3123,945.9,28.81,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2040,SSP2-4.5,0.3263,941.9,28.9,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2026,SSP5-8.5,0.2477,995.3,27.64,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2027,SSP5-8.5,0.2682,988.6,27.78,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2028,SSP5-8.5,0.2557,982.0,27.92,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2029,SSP5-8.5,0.2759,975.3,28.06,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2030,SSP5-8.5,0.2743,968.6,28.2,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2031,SSP5-8.5,0.2865,961.9,28.34,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2032,SSP5-8.5,0.3041,955.2,28.48,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2033,SSP5-8.5,0.2836,948.6,28.62,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2034,SSP5-8.5,0.3497,941.9,28.76,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2035,SSP5-8.5,0.2956,935.2,28.9,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2036,SSP5-8.5,0.2994,928.5,29.04,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2037,SSP5-8.5,0.3549,921.8,29.18,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2038,SSP5-8.5,0.3557,915.2,29.32,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2039,SSP5-8.5,0.3606,908.5,29.46,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Visakhapatnam,North Coastal,17.6868,83.2185,2040,SSP5-8.5,0.369,901.8,29.6,0.24,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2026,SSP2-4.5,0.2639,972.1,27.59,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2027,SSP2-4.5,0.2504,968.2,27.69,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2028,SSP2-4.5,0.2741,964.3,27.78,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2029,SSP2-4.5,0.2633,960.4,27.87,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2030,SSP2-4.5,0.3006,956.5,27.97,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2031,SSP2-4.5,0.2825,952.6,28.06,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2032,SSP2-4.5,0.2732,948.7,28.15,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2033,SSP2-4.5,0.2877,944.8,28.25,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2034,SSP2-4.5,0.3067,940.9,28.34,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2035,SSP2-4.5,0.2916,937.0,28.43,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2036,SSP2-4.5,0.2908,933.1,28.53,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2037,SSP2-4.5,0.3166,929.2,28.62,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2038,SSP2-4.5,0.3211,925.2,28.71,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2039,SSP2-4.5,0.3105,921.3,28.81,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2040,SSP2-4.5,0.3158,917.4,28.9,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2026,SSP5-8.5,0.2725,969.5,27.64,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2027,SSP5-8.5,0.2468,963.0,27.78,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2028,SSP5-8.5,0.2556,956.5,27.92,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2029,SSP5-8.5,0.2775,950.0,28.06,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2030,SSP5-8.5,0.2957,943.5,28.2,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2031,SSP5-8.5,0.3145,937.0,28.34,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2032,SSP5-8.5,0.3461,930.5,28.48,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2033,SSP5-8.5,0.3421,923.9,28.62,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2034,SSP5-8.5,0.3303,917.4,28.76,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2035,SSP5-8.5,0.3417,910.9,28.9,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2036,SSP5-8.5,0.3306,904.4,29.04,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2037,SSP5-8.5,0.3591,897.9,29.18,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2038,SSP5-8.5,0.3625,891.4,29.32,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2039,SSP5-8.5,0.3836,884.9,29.46,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Vizianagaram,North Coastal,18.1066,83.3956,2040,SSP5-8.5,0.3696,878.4,29.6,0.26,moderate,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2026,SSP2-4.5,0.2034,1116.5,27.59,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2027,SSP2-4.5,0.2268,1112.0,27.69,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2028,SSP2-4.5,0.197,1107.5,27.78,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2029,SSP2-4.5,0.2103,1103.1,27.87,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2030,SSP2-4.5,0.2192,1098.6,27.97,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2031,SSP2-4.5,0.2005,1094.1,28.06,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2032,SSP2-4.5,0.2162,1089.6,28.15,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2033,SSP2-4.5,0.2152,1085.1,28.25,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2034,SSP2-4.5,0.2201,1080.6,28.34,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2035,SSP2-4.5,0.2059,1076.2,28.43,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2036,SSP2-4.5,0.225,1071.7,28.53,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2037,SSP2-4.5,0.2378,1067.2,28.62,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2038,SSP2-4.5,0.2601,1062.7,28.71,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2039,SSP2-4.5,0.2535,1058.2,28.81,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2040,SSP2-4.5,0.2807,1053.7,28.9,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2026,SSP5-8.5,0.1804,1113.5,27.64,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2027,SSP5-8.5,0.219,1106.1,27.78,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2028,SSP5-8.5,0.211,1098.6,27.92,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2029,SSP5-8.5,0.2571,1091.1,28.06,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2030,SSP5-8.5,0.2031,1083.6,28.2,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2031,SSP5-8.5,0.2085,1076.2,28.34,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2032,SSP5-8.5,0.2194,1068.7,28.48,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2033,SSP5-8.5,0.195,1061.2,28.62,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2034,SSP5-8.5,0.2332,1053.7,28.76,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2035,SSP5-8.5,0.2348,1046.3,28.9,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2036,SSP5-8.5,0.2593,1038.8,29.04,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2037,SSP5-8.5,0.2695,1031.3,29.18,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2038,SSP5-8.5,0.3066,1023.8,29.32,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2039,SSP5-8.5,0.2946,1016.4,29.46,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates
+Andhra Pradesh,Srikakulam,North Coastal,18.2949,83.8938,2040,SSP5-8.5,0.2706,1008.9,29.6,0.19,good,NASA POWER baseline + IPCC AR6 SSP rates

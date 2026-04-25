@@ -1,0 +1,46 @@
+{
+  "state": "Andhra Pradesh",
+  "pipeline": "Identical to Telangana \u2014 zero code changes required",
+  "districts": 13,
+  "agro_zones": [
+    "Rayalaseema",
+    "Southern AP",
+    "Coastal AP",
+    "North Coastal"
+  ],
+  "projection_rows": 390,
+  "scenarios": [
+    "SSP2-4.5",
+    "SSP5-8.5"
+  ],
+  "horizon": "2026\u20132040",
+  "most_vulnerable_2040_ssp585": [
+    {
+      "district": "Anantapur",
+      "agro_zone": "Rayalaseema",
+      "drought_probability": 0.7323
+    },
+    {
+      "district": "Kurnool",
+      "agro_zone": "Rayalaseema",
+      "drought_probability": 0.6179
+    },
+    {
+      "district": "Kadapa",
+      "agro_zone": "Rayalaseema",
+      "drought_probability": 0.5746
+    }
+  ],
+  "avg_drought_prob_2040": {
+    "SSP2-4.5": 0.354,
+    "SSP5-8.5": 0.44
+  },
+  "scalability_verdict": "Anv\u012bk\u1e63a\u1e47a architecture is state-agnostic. Adding any Indian state requires only district centroids and NASA POWER download \u2014 no model retraining.",
+  "next_states": [
+    "Maharashtra",
+    "Karnataka",
+    "Madhya Pradesh",
+    "Odisha"
+  ],
+  "data_source": "NASA POWER GMAO + IPCC AR6 WG1 South Asia regional change factors"
+}

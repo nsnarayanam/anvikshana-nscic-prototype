@@ -1,0 +1,9 @@
+year,declared_drought,gt_districts,avg_spi3,spi_districts_flagged,spi_detected,spi_correct,model_districts_flagged,model_detected,model_correct,note
+2002,True,33,-0.16,18,True,True,33,True,True,Severe monsoon failure
+2013,False,0,0.686,0,True,False,0,False,True,Normal year
+2015,True,21,-0.634,33,True,True,33,True,True,21 districts affected
+2017,True,15,-0.347,32,True,True,33,True,True,Partial declaration
+2018,True,31,-0.897,33,True,True,33,True,True,Major drought — all 31 districts
+2019,True,12,-0.06,26,True,True,32,True,True,Partial declaration
+2020,False,0,0.832,0,True,False,0,False,True,Normal year — good monsoon
+2021,False,0,0.226,10,False,True,0,False,True,Normal year

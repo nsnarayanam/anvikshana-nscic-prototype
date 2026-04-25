@@ -1,0 +1,33 @@
+{
+  "baseline_method": "SPI-3 threshold (WMO standard) \u2014 SPI < -1.0 for \u22652 months",
+  "anvikshana_method": "Random Forest on 16 features (NDVI+SM+LST+lag+rolling+interaction)",
+  "evaluation_years": 8,
+  "drought_years_tested": 5,
+  "normal_years_tested": 3,
+  "results": {
+    "spi_baseline": {
+      "overall_accuracy": 0.75,
+      "drought_detection_rate": 1.0,
+      "false_alarm_rate": 0.667,
+      "lead_time_days": 0,
+      "correct_years": 6
+    },
+    "anvikshana_model": {
+      "overall_accuracy": 1.0,
+      "drought_detection_rate": 1.0,
+      "false_alarm_rate": 0.0,
+      "lead_time_days": 45,
+      "correct_years": 8,
+      "roc_auc": 0.974,
+      "f1_score": 0.801,
+      "brier_score": 0.058
+    }
+  },
+  "improvement_over_baseline": {
+    "accuracy_gain": 0.25,
+    "detection_rate_gain": 0.0,
+    "false_alarm_reduction": 0.667,
+    "lead_time_gain_days": 45,
+    "additional_capability": "15-year forward projections under SSP2-4.5 & SSP5-8.5 \u2014 SPI has no projection capability"
+  }
+}
