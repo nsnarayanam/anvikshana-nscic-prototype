@@ -14,7 +14,7 @@ import json, os, warnings
 warnings.filterwarnings("ignore")
 
 st.set_page_config(
-    page_title="Anvikshana Drought Intelligence",
+    page_title="Anvikshana Drought Intelligence v2",
     page_icon="🌾",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -102,12 +102,14 @@ with st.sidebar:
         "📊 Overview",
         "🗺️ Mandal Drought Map",
         "📈 Seasonal Analysis",
+        "🌧️ NASA POWER & SPI",
         "🔮 2026–2040 Projections",
         "🤖 Model Validation",
     ])
     st.markdown("---")
-    st.markdown("**Data — 100% Real (DiCRA/UNDP)**")
-    st.markdown("🛰️ NDVI · Soil Moisture · LST")
+    st.markdown("**Data — 100% Real**")
+    st.markdown("🛰️ DiCRA NDVI · SM · LST")
+    st.markdown("🌍 NASA POWER 2000–2024")
     st.markdown("📍 592 mandals · 33 districts")
     st.markdown("📅 23 biweekly dates · 2025")
     st.markdown("**Model (Spatial CV)**")
@@ -666,20 +668,3 @@ elif page == "🌧️ NASA POWER & SPI":
                 "SPI-3 uses a 3-month rolling rainfall window fitted to a gamma distribution. "
                 "Values below -1.0 indicate drought conditions. "
                 "Data source: NASA POWER GMAO (satellite-derived, 0.5° resolution).")
-page = st.radio("Navigation", [
-        "📊 Overview",
-        "🗺️ Mandal Drought Map",
-        "📈 Seasonal Analysis",
-        "🔮 2026–2040 Projections",
-        "🤖 Model Validation",
-    ])
-"📈 Seasonal Analysis",:
-"🌧️ NASA POWER & SPI",
-page = st.radio("Navigation", [
-        "📊 Overview",
-        "🗺️ Mandal Drought Map",
-        "📈 Seasonal Analysis",
-        "🌧️ NASA POWER & SPI",
-        "🔮 2026–2040 Projections",
-        "🤖 Model Validation",
-    ])
