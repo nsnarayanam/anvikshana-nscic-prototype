@@ -647,7 +647,7 @@ elif page == "🔁 2018 vs 2025 Comparison":
                 height=300, margin=dict(l=0,r=0,t=10,b=0),
                 yaxis_title="NDVI", yaxis=dict(range=[0.25, 0.72]),
                 legend=dict(orientation="h", y=1.12),
-                xaxis=dict(tickmode="array", tickvals=month_labels)
+                xaxis=dict(type="category", tickangle=0)
             )
             st.plotly_chart(fig_m, use_container_width=True)
 
