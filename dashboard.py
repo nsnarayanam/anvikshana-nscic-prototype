@@ -1295,7 +1295,7 @@ Aganitha Space Technologies is an active contributor to the OGC CSAPI Standards 
             st.markdown("**Year-by-year detection:**")
             display = bench[["year","declared_drought","avg_spi3","spi_correct","model_correct"]].copy()
             display.columns = ["Year","Declared Drought","Avg SPI-3","SPI-3 Correct","Anvīkṣaṇa Correct"]
-            st.dataframe(display.style.applymap(
+            st.dataframe(display.style.map(
                 lambda v: "background-color:#d4edda" if v is True else ("background-color:#f8d7da" if v is False else ""),
                 subset=["SPI-3 Correct","Anvīkṣaṇa Correct"]
             ), use_container_width=True, hide_index=True)
