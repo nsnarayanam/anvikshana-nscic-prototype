@@ -231,7 +231,7 @@ elif page == "🗺️ Mandal Drought Map":
         if os.path.exists(gj_path):
             with open(gj_path) as f:
                 date_gj = json.load(f)
-            uid_data = day_data.set_index("uid")[
+            uid_data = day_data.drop_duplicates(subset="uid").set_index("uid")[
                 ["ndvi_mean","sm_mean","cdsi","drought_class","mandal","district"]
             ].to_dict("index")
             for feat in date_gj["features"]:
