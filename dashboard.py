@@ -107,6 +107,10 @@ ALL_DATES = sorted(merged["date"].dt.strftime("%Y-%m-%d").unique())
 
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
+    # Logo
+    logo_path = BASE / "Aganitha_logo.gif"
+    if logo_path.exists():
+        st.image(str(logo_path), width=180)
     st.markdown("### 🌾 Anvīkṣaṇa")
     st.markdown("*Earth Intelligence Platform*")
     st.markdown("---")
