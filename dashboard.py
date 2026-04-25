@@ -408,7 +408,8 @@ elif page == "🔮 2026–2040 Projections":
     st.markdown("---")
     st.subheader("Drought Probability Trend — 2026 to 2040")
     top5 = proj_sc[proj_sc["year"]==2040].nlargest(5,"drought_probability")["district"].tolist()
-    sel_dists = st.multiselect("Select Districts",ALL_DISTRICTS,default=top5[:4])
+    safe_defaults = [d for d in top5[:4] if d in ALL_DISTRICTS]
+    sel_dists = st.multiselect("Select Districts",ALL_DISTRICTS,default=safe_defaults)
 
     if sel_dists:
         pf = proj_sc[proj_sc["district"].isin(sel_dists)]
