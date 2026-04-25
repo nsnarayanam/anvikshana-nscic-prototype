@@ -580,7 +580,20 @@ elif page == "🔁 2018 vs 2025 Comparison":
     st.caption("2018: Declared drought year (all 33 districts) · 2025: Current monitoring year · DiCRA NDVI · 592 mandals")
 
     if ndvi18 is None:
-        st.warning("2018 data not found. Upload `data/geojson_ndvi/mandal_ndvi_2018_full.csv` to the repo.")
+        import glob
+        st.error("**Debug — path diagnostics (temporary)**")
+        files_in_dir = sorted([p.name for p in GEOJSON_DIR.iterdir()]) if GEOJSON_DIR.exists() else ["DIR NOT FOUND"]
+        found = glob.glob("**/mandal_ndvi_2018_full.csv", recursive=True)
+        st.code(
+            f"__file__: {__file__}\n"
+            f"BASE: {BASE}\n"
+            f"NDVI18_CSV: {NDVI18_CSV}\n"
+            f"exists: {NDVI18_CSV.exists()}\n"
+            f"GEOJSON_DIR exists: {GEOJSON_DIR.exists()}\n"
+            f"cwd: {os.getcwd()}\n"
+            f"glob found: {found}\n"
+            f"files in dir: {files_in_dir}"
+        )
     else:
         # 2025 data comes from merged (already loaded, already on GitHub)
         ndvi25 = merged[["date","month","mandal","district","longitude","latitude","ndvi_mean"]].copy()
