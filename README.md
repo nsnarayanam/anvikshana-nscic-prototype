@@ -1,3 +1,4 @@
+<img width="1196" height="820" alt="AgST logo" src="https://github.com/user-attachments/assets/9562afac-42f1-47a8-a07d-f4b881811b74" />
 # Anvīkṣaṇa — Agricultural Drought Intelligence
 ### NSCIC Stage 2 Prototype | National Climate Stack Innovation Challenge
 
