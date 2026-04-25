@@ -42,6 +42,9 @@ MERGED_CSV  = os.path.join(GEOJSON_DIR, "mandal_ndvi_sm_merged.csv")
 ANNUAL_CSV  = os.path.join(GEOJSON_DIR, "mandal_ndvi_annual.csv")
 PROJ_CSV    = os.path.join(BASE, "outputs", "drought_projections_2026_2040.csv")
 FEAT_CSV    = os.path.join(BASE, "outputs", "feature_importance.csv")
+NASA_CSV    = os.path.join(GEOJSON_DIR, "nasa_power_telangana.csv")
+SPI_CSV     = os.path.join(GEOJSON_DIR, "nasa_power_spi.csv")
+CLIMATE_CSV = os.path.join(GEOJSON_DIR, "district_climate_summary.csv")
 
 MONTH_MAP = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",
              7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
@@ -72,9 +75,21 @@ def load_all():
         mandal_count=("mandal","nunique"),
     ).reset_index()
     geojson_files = sorted([f for f in os.listdir(GEOJSON_DIR) if f.endswith(".geojson")])
-    return merged, annual, proj, feat, dist_summary, geojson_files
+    # NASA POWER data (optional - graceful fallback if not present)
+    nasa, spi_df, climate = None, None, None
+    if os.path.exists(NASA_CSV):
+        import calendar
+        nasa = pd.read_csv(NASA_CSV)
+        nasa = nasa[nasa.month <= 12].copy()
+        nasa["days_in_month"] = nasa.apply(lambda r: calendar.monthrange(int(r.year),int(r.month))[1], axis=1)
+        nasa["rainfall_mm"] = nasa["rainfall_mm"] * nasa["days_in_month"]
+    if os.path.exists(SPI_CSV):
+        spi_df = pd.read_csv(SPI_CSV)
+    if os.path.exists(CLIMATE_CSV):
+        climate = pd.read_csv(CLIMATE_CSV)
+    return merged, annual, proj, feat, dist_summary, geojson_files, nasa, spi_df, climate
 
-merged, annual, proj, feat_imp, dist_summary, geojson_files = load_all()
+merged, annual, proj, feat_imp, dist_summary, geojson_files, nasa, spi_df, climate = load_all()
 ALL_DISTRICTS = sorted(merged["district"].unique())
 ALL_DATES = sorted(merged["date"].dt.strftime("%Y-%m-%d").unique())
 
@@ -522,3 +537,132 @@ elif page == "🤖 Model Validation":
 | Land Surface Temperature | DiCRA / UNDP India | 2 months H3 | Real satellite |
 | **Total** | **DiCRA (UNDP India)** | **487,243** | **100% real** |
     """)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PAGE — NASA POWER & SPI
+# ══════════════════════════════════════════════════════════════════════════════
+elif page == "🌧️ NASA POWER & SPI":
+    st.markdown("### 🌧️ NASA POWER Climate Data & SPI Drought Index")
+    st.caption("25 years of real satellite-derived rainfall & temperature · NASA POWER GMAO · Telangana 2000–2024")
+
+    if nasa is None or spi_df is None:
+        st.warning("NASA POWER data not found. Upload nasa_power_telangana.csv to data/geojson_ndvi/")
+    else:
+        # ── KPIs ──────────────────────────────────────────────────────────
+        import calendar
+        telangana_rain = nasa.groupby(['district','year'])['rainfall_mm'].sum().groupby('year').mean()
+        avg_rain = telangana_rain.mean()
+        avg_temp = nasa['temp_mean_c'].mean()
+        drought_months = (spi_df['spi3'] < -1.0).sum()
+        worst_year = spi_df[spi_df['spi3'] < -1.5].groupby('year')['district'].count().idxmax() if len(spi_df[spi_df['spi3']<-1.5]) > 0 else 2002
+
+        c1,c2,c3,c4 = st.columns(4)
+        c1.metric("Avg Annual Rainfall", f"{avg_rain:.0f} mm")
+        c2.metric("Avg Temperature", f"{avg_temp:.1f}°C")
+        c3.metric("Drought Months (SPI<-1)", str(drought_months))
+        c4.metric("Worst Drought Year", str(worst_year))
+
+        st.markdown("---")
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.subheader("Annual Rainfall Trend — Telangana 2000–2024")
+            ann = nasa.groupby(['district','year'])['rainfall_mm'].sum().reset_index()
+            tel_ann = ann.groupby('year')['rainfall_mm'].mean().reset_index()
+            tel_ann.columns = ['year','rainfall_mm']
+            fig = go.Figure()
+            fig.add_trace(go.Bar(x=tel_ann['year'], y=tel_ann['rainfall_mm'],
+                marker_color=['#B71C1C' if v < tel_ann['rainfall_mm'].mean()*0.85
+                              else '#2E7D32' for v in tel_ann['rainfall_mm']],
+                name='Annual Rainfall'))
+            fig.add_hline(y=tel_ann['rainfall_mm'].mean(), line_dash='dash',
+                         line_color='#0D47A1', annotation_text='25yr mean')
+            fig.update_layout(height=320, margin=dict(l=0,r=0,t=10,b=0),
+                             yaxis_title='mm/year', xaxis_title='')
+            st.plotly_chart(fig, use_container_width=True)
+            st.caption(f"Source: NASA POWER PRECTOTCORR · {nasa.district.nunique()} district average")
+
+        with col2:
+            st.subheader("SPI-3 Drought Index — District Selector")
+            sel = st.selectbox("Select District", sorted(spi_df.district.unique()),
+                               index=list(sorted(spi_df.district.unique())).index('Narayanpet')
+                               if 'Narayanpet' in spi_df.district.unique() else 0)
+            d_spi = spi_df[spi_df.district==sel].sort_values(['year','month']).reset_index(drop=True)
+            d_spi['date'] = pd.to_datetime(d_spi[['year','month']].assign(day=1))
+
+            fig2 = go.Figure()
+            fig2.add_hrect(y0=-1, y1=-1.5, fillcolor="#E65100", opacity=0.08,
+                          annotation_text="Moderate", annotation_position="right")
+            fig2.add_hrect(y0=-1.5, y1=-2.0, fillcolor="#B71C1C", opacity=0.08,
+                          annotation_text="Severe", annotation_position="right")
+            fig2.add_hrect(y0=-2.0, y1=-4, fillcolor="#4A148C", opacity=0.08,
+                          annotation_text="Extreme", annotation_position="right")
+            fig2.add_trace(go.Scatter(
+                x=d_spi['date'], y=d_spi['spi3'],
+                fill='tozeroy',
+                fillcolor='rgba(46,125,50,0.15)',
+                line=dict(color='#2E7D32', width=1.5),
+                name='SPI-3'))
+            fig2.add_hline(y=-1.0, line_dash='dash', line_color='#E65100', line_width=1)
+            fig2.update_layout(height=320, margin=dict(l=0,r=0,t=10,b=0),
+                              yaxis_title='SPI-3', xaxis_title='',
+                              yaxis=dict(range=[-3, 3]))
+            st.plotly_chart(fig2, use_container_width=True)
+
+        # ── District rainfall heatmap ─────────────────────────────────────
+        st.markdown("---")
+        col3, col4 = st.columns(2)
+        with col3:
+            st.subheader("District Annual Rainfall — All 33 Districts")
+            if climate is not None:
+                clim = climate.sort_values('mean_annual_rain')
+                fig3 = go.Figure(go.Bar(
+                    x=clim['mean_annual_rain'], y=clim['district'],
+                    orientation='h',
+                    marker_color=['#B71C1C' if v<700 else '#E65100' if v<850
+                                  else '#F9A825' if v<1000 else '#2E7D32'
+                                  for v in clim['mean_annual_rain']],
+                ))
+                fig3.add_vline(x=clim['mean_annual_rain'].mean(), line_dash='dash',
+                              line_color='#0D47A1',
+                              annotation_text=f"Mean {clim['mean_annual_rain'].mean():.0f}mm")
+                fig3.update_layout(height=500, margin=dict(l=0,r=0,t=10,b=0),
+                                  xaxis_title='Annual Rainfall (mm)')
+                st.plotly_chart(fig3, use_container_width=True)
+
+        with col4:
+            st.subheader("Temperature Trend — Telangana 2000–2024")
+            temp_ann = nasa.groupby('year')['temp_mean_c'].mean().reset_index()
+            z = np.polyfit(temp_ann['year'], temp_ann['temp_mean_c'], 1)
+            trendline = np.poly1d(z)(temp_ann['year'])
+            fig4 = go.Figure()
+            fig4.add_trace(go.Scatter(x=temp_ann['year'], y=temp_ann['temp_mean_c'],
+                mode='lines+markers', name='Mean Temp',
+                line=dict(color='#E65100', width=2), marker=dict(size=5)))
+            fig4.add_trace(go.Scatter(x=temp_ann['year'], y=trendline,
+                mode='lines', name=f'Trend (+{z[0]*24:.2f}°C/24yr)',
+                line=dict(color='#B71C1C', width=1.5, dash='dash')))
+            fig4.update_layout(height=240, margin=dict(l=0,r=0,t=10,b=0),
+                              yaxis_title='°C', legend=dict(orientation='h'))
+            st.plotly_chart(fig4, use_container_width=True)
+
+            st.subheader("SPI-3 Class Distribution — All Districts")
+            spi_counts = spi_df['spi3_class'].value_counts()
+            colors_map = {'Normal':'#2E7D32','Watch':'#F9A825',
+                         'Moderate Drought':'#E65100',
+                         'Severe Drought':'#B71C1C','Extreme Drought':'#4A148C'}
+            fig5 = go.Figure(go.Pie(
+                labels=spi_counts.index,
+                values=spi_counts.values,
+                marker_colors=[colors_map.get(l,'#999') for l in spi_counts.index],
+                hole=0.45,
+            ))
+            fig5.update_layout(height=260, margin=dict(l=0,r=0,t=10,b=0),
+                              legend=dict(orientation='h', y=-0.15))
+            st.plotly_chart(fig5, use_container_width=True)
+
+        # ── SPI methodology note ──────────────────────────────────────────
+        st.info("**SPI (Standardised Precipitation Index)** is the WMO-recommended drought index. "
+                "SPI-3 uses a 3-month rolling rainfall window fitted to a gamma distribution. "
+                "Values below -1.0 indicate drought conditions. "
+                "Data source: NASA POWER GMAO (satellite-derived, 0.5° resolution).")
