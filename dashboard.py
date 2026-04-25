@@ -666,3 +666,20 @@ elif page == "🌧️ NASA POWER & SPI":
                 "SPI-3 uses a 3-month rolling rainfall window fitted to a gamma distribution. "
                 "Values below -1.0 indicate drought conditions. "
                 "Data source: NASA POWER GMAO (satellite-derived, 0.5° resolution).")
+page = st.radio("Navigation", [
+        "📊 Overview",
+        "🗺️ Mandal Drought Map",
+        "📈 Seasonal Analysis",
+        "🔮 2026–2040 Projections",
+        "🤖 Model Validation",
+    ])
+"📈 Seasonal Analysis",:
+"🌧️ NASA POWER & SPI",
+page = st.radio("Navigation", [
+        "📊 Overview",
+        "🗺️ Mandal Drought Map",
+        "📈 Seasonal Analysis",
+        "🌧️ NASA POWER & SPI",
+        "🔮 2026–2040 Projections",
+        "🤖 Model Validation",
+    ])
