@@ -348,7 +348,7 @@ elif page == "📈 Seasonal Analysis":
         samp = merged.sample(min(2000,len(merged)),random_state=42)
         fig_sc = px.scatter(samp,x="ndvi_mean",y="sm_mean",color="cdsi",
             color_continuous_scale=["#2E7D32","#F9A825","#B71C1C"],
-            opacity=0.45,trendline="ols",
+            opacity=0.45,
             labels={"ndvi_mean":"NDVI","sm_mean":"Soil Moisture","cdsi":"CDSI"},
             height=260)
         fig_sc.update_layout(margin=dict(l=0,r=0,t=5,b=0))
