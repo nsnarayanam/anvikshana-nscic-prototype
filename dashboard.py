@@ -36,17 +36,18 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-BASE = os.path.dirname(os.path.abspath(__file__))
-GEOJSON_DIR = os.path.join(BASE, "data", "geojson_ndvi")
-MERGED_CSV  = os.path.join(GEOJSON_DIR, "mandal_ndvi_sm_merged.csv")
-ANNUAL_CSV  = os.path.join(GEOJSON_DIR, "mandal_ndvi_annual.csv")
-NDVI18_CSV  = os.path.join(GEOJSON_DIR, "mandal_ndvi_2018_full.csv")   # one new file
-PROJ_CSV    = os.path.join(BASE, "outputs", "drought_projections_2026_2040.csv")
-FEAT_CSV    = os.path.join(BASE, "outputs", "feature_importance.csv")
-NASA_CSV    = os.path.join(GEOJSON_DIR, "nasa_power_telangana.csv")
-SPI_CSV     = os.path.join(GEOJSON_DIR, "nasa_power_spi.csv")
-CLIMATE_CSV = os.path.join(GEOJSON_DIR, "district_climate_summary.csv")
-IMD_CSV     = os.path.join(GEOJSON_DIR, "imd_live_rainfall.csv")
+from pathlib import Path
+BASE        = Path(__file__).resolve().parent
+GEOJSON_DIR = BASE / "data" / "geojson_ndvi"
+MERGED_CSV  = GEOJSON_DIR / "mandal_ndvi_sm_merged.csv"
+ANNUAL_CSV  = GEOJSON_DIR / "mandal_ndvi_annual.csv"
+NDVI18_CSV  = GEOJSON_DIR / "mandal_ndvi_2018_full.csv"
+PROJ_CSV    = BASE / "outputs" / "drought_projections_2026_2040.csv"
+FEAT_CSV    = BASE / "outputs" / "feature_importance.csv"
+NASA_CSV    = GEOJSON_DIR / "nasa_power_telangana.csv"
+SPI_CSV     = GEOJSON_DIR / "nasa_power_spi.csv"
+CLIMATE_CSV = GEOJSON_DIR / "district_climate_summary.csv"
+IMD_CSV     = GEOJSON_DIR / "imd_live_rainfall.csv"
 
 MONTH_MAP = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",
              7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
@@ -76,26 +77,26 @@ def load_all():
         latitude=("latitude","mean"), longitude=("longitude","mean"),
         mandal_count=("mandal","nunique"),
     ).reset_index()
-    geojson_files = sorted([f for f in os.listdir(GEOJSON_DIR) if f.endswith(".geojson")])
+    geojson_files = sorted([f for f in GEOJSON_DIR.iterdir() if f.suffix == ".geojson"])
     # 2018 historical NDVI (only one new file needed — 2025 uses merged above)
     ndvi18 = None
-    if os.path.exists(NDVI18_CSV):
+    if NDVI18_CSV.exists():
         ndvi18 = pd.read_csv(NDVI18_CSV)
         ndvi18["date"] = pd.to_datetime(ndvi18["date"])
     # NASA POWER data (optional - graceful fallback if not present)
     nasa, spi_df, climate = None, None, None
-    if os.path.exists(NASA_CSV):
+    if NASA_CSV.exists():
         import calendar
         nasa = pd.read_csv(NASA_CSV)
         nasa = nasa[nasa.month <= 12].copy()
         nasa["days_in_month"] = nasa.apply(lambda r: calendar.monthrange(int(r.year),int(r.month))[1], axis=1)
         nasa["rainfall_mm"] = nasa["rainfall_mm"] * nasa["days_in_month"]
-    if os.path.exists(SPI_CSV):
+    if SPI_CSV.exists():
         spi_df = pd.read_csv(SPI_CSV)
-    if os.path.exists(CLIMATE_CSV):
+    if CLIMATE_CSV.exists():
         climate = pd.read_csv(CLIMATE_CSV)
     imd_live = None
-    if os.path.exists(IMD_CSV):
+    if IMD_CSV.exists():
         imd_live = pd.read_csv(IMD_CSV)
     return merged, annual, proj, feat, dist_summary, geojson_files, ndvi18, nasa, spi_df, climate, imd_live
 
@@ -254,10 +255,10 @@ elif page == "🗺️ Mandal Drought Map":
     # Load matching GeoJSON
     parts = selected_date.split("-")
     gj_fname = f"{parts[2]}-{parts[1]}-{parts[0]}.geojson"
-    gj_path  = os.path.join(GEOJSON_DIR, gj_fname)
+    gj_path  = GEOJSON_DIR / gj_fname
 
     with col_map:
-        if os.path.exists(gj_path):
+        if gj_path.exists():
             with open(gj_path) as f:
                 date_gj = json.load(f)
             uid_data = day_data.drop_duplicates(subset="uid").set_index("uid")[
