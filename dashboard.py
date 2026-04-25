@@ -15,7 +15,6 @@ warnings.filterwarnings("ignore")
 
 st.set_page_config(
     page_title="Anvikshana Drought Intelligence v2",
-    page_icon="🌾",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -111,26 +110,26 @@ with st.sidebar:
     logo_path = BASE / "AgST logo.png"
     if logo_path.exists():
         st.image(str(logo_path), width=180)
-    st.markdown("### 🌾 Anvīkṣaṇa")
+    st.markdown("### Anvīkṣaṇa")
     st.markdown("*Earth Intelligence Platform*")
     st.markdown("---")
     page = st.radio("Navigation", [
-        "📊 Overview",
-        "🗺️ Mandal Drought Map",
-        "📈 Seasonal Analysis",
-        "🔁 2018 vs 2025 Comparison",
-        "🌧️ NASA POWER & SPI",
-        "🚨 IMD Live Alerts",
-        "🔮 2026–2040 Projections",
-        "🤖 Model Validation",
-        "🔌 OGC API Explorer",
+        "Overview",
+        "Mandal Drought Map",
+        "Seasonal Analysis",
+        "2018 vs 2025 Comparison",
+        "NASA POWER & SPI",
+        "IMD Live Alerts",
+        "2026–2040 Projections",
+        "Model Validation",
+        "OGC API Explorer",
     ])
     st.markdown("---")
     st.markdown("**Data — 100% Real**")
-    st.markdown("🛰️ DiCRA NDVI · SM · LST")
-    st.markdown("🌍 NASA POWER 2000–2024")
-    st.markdown("📍 592 mandals · 33 districts")
-    st.markdown("📅 23 biweekly dates · 2025")
+    st.markdown(" DiCRA NDVI · SM · LST")
+    st.markdown(" NASA POWER 2000–2024")
+    st.markdown(" 592 mandals · 33 districts")
+    st.markdown(" 23 biweekly dates · 2025")
     st.markdown("**Model (Spatial CV)**")
     st.markdown("ROC-AUC **0.974 ± 0.004**")
     st.markdown("F1 Score **0.801 ± 0.032**")
@@ -234,8 +233,8 @@ if page == "📊 Overview":
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE 2 — MANDAL CHOROPLETH MAP
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "🗺️ Mandal Drought Map":
-    st.markdown("### 🗺️ Mandal-Level Drought Map — Real DiCRA Polygon Boundaries")
+elif page == " Mandal Drought Map":
+    st.markdown("### Mandal-Level Drought Map — Real DiCRA Polygon Boundaries")
     st.caption("592 mandal polygons with actual satellite-derived NDVI from DiCRA/UNDP India")
 
     col_ctrl, col_map = st.columns([1, 3.2])
@@ -309,8 +308,8 @@ elif page == "🗺️ Mandal Drought Map":
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE 3 — SEASONAL ANALYSIS
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "📈 Seasonal Analysis":
-    st.markdown("### 📈 Seasonal NDVI & Drought Analysis — Telangana 2025")
+elif page == " Seasonal Analysis":
+    st.markdown("###  Seasonal NDVI & Drought Analysis — Telangana 2025")
 
     col_s1, col_s2 = st.columns([1,3])
     with col_s1:
@@ -394,8 +393,8 @@ elif page == "📈 Seasonal Analysis":
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE 4 — 2026–2040 PROJECTIONS
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "🔮 2026–2040 Projections":
-    st.markdown("### 🔮 District Drought Projections — 2026 to 2040")
+elif page == " 2026–2040 Projections":
+    st.markdown("###  District Drought Projections — 2026 to 2040")
     st.caption("Random Forest model + IPCC AR6 WG1 South Asia regional change factors")
 
     sc_opts = {"SSP2-4.5 (Moderate Emissions)":"SSP2-4.5",
@@ -482,8 +481,8 @@ elif page == "🔮 2026–2040 Projections":
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE 5 — MODEL VALIDATION
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "🤖 Model Validation":
-    st.markdown("### 🤖 Model Architecture & Validation")
+elif page == " Model Validation":
+    st.markdown("###  Model Architecture & Validation")
 
     c1,c2,c3,c4 = st.columns(4)
     c1.metric("ROC-AUC","0.974","±0.004",delta_color="off")
@@ -549,7 +548,7 @@ elif page == "🤖 Model Validation":
     """)
 
     st.markdown("---")
-    st.subheader("🏆 Historical Drought Validation — Government Declared Years")
+    st.subheader(" Historical Drought Validation — Government Declared Years")
     st.success("""
 **5/5 declared drought years correctly detected by Anvīkṣaṇa model (NASA POWER SPI-3)**
 
@@ -581,8 +580,8 @@ elif page == "🤖 Model Validation":
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE — 2018 vs 2025 HISTORICAL COMPARISON
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "🔁 2018 vs 2025 Comparison":
-    st.markdown("### 🔁 Historical Drought Comparison — 2018 vs 2025")
+elif page == " 2018 vs 2025 Comparison":
+    st.markdown("###  Historical Drought Comparison — 2018 vs 2025")
     st.caption("2018: Declared drought year (all 33 districts) · 2025: Current monitoring year · DiCRA NDVI · 592 mandals")
 
     if ndvi18 is None:
@@ -794,8 +793,8 @@ elif page == "🔁 2018 vs 2025 Comparison":
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE — NASA POWER & SPI
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "🌧️ NASA POWER & SPI":
-    st.markdown("### 🌧️ NASA POWER Climate Data & SPI Drought Index")
+elif page == " NASA POWER & SPI":
+    st.markdown("###  NASA POWER Climate Data & SPI Drought Index")
     st.caption("25 years of real satellite-derived rainfall & temperature · NASA POWER GMAO · Telangana 2000–2024")
 
     if nasa is None or spi_df is None:
@@ -923,8 +922,8 @@ elif page == "🌧️ NASA POWER & SPI":
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE — IMD LIVE ALERTS
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "🚨 IMD Live Alerts":
-    st.markdown("### 🚨 IMD Live Rainfall Alerts — Telangana")
+elif page == " IMD Live Alerts":
+    st.markdown("###  IMD Live Rainfall Alerts — Telangana")
     st.caption(f"Real-time data from India Meteorological Department API · Updated: 25 April 2026")
 
     if imd_live is None:
@@ -959,7 +958,7 @@ elif page == "🚨 IMD Live Alerts":
         c3.metric("Most Deficit District", worst["district"].values[0])
         c4.metric("Worst Departure", f"{worst['cum_dep_num'].values[0]:.0f}%")
 
-        st.error("⚠️ Telangana is experiencing active rainfall deficit as of 25 April 2026 — confirming Anvīkṣaṇa drought model predictions.")
+        st.error(" Telangana is experiencing active rainfall deficit as of 25 April 2026 — confirming Anvīkṣaṇa drought model predictions.")
 
         st.markdown("---")
         col1, col2 = st.columns(2)
@@ -1016,7 +1015,7 @@ elif page == "🚨 IMD Live Alerts":
         with col4:
             st.subheader("IMD vs Anvīkṣaṇa Model — Validation")
             st.success("""
-**✅ Live IMD data confirms our drought model:**
+** Live IMD data confirms our drought model:**
 
 - **All 33 Telangana districts** showing rainfall deficit today
 - **Top drought districts match** — Suryapet (-97%), Warangal (-90%), Mahabubabad (-92%)
@@ -1031,8 +1030,8 @@ The model predicts drought — IMD confirms drought is happening.
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE — OGC API EXPLORER
 # ══════════════════════════════════════════════════════════════════════════════
-elif page == "🔌 OGC API Explorer":
-    st.markdown("### 🔌 OGC Climate Stack API (CSAPI) — Live Explorer")
+elif page == "OGC API Explorer":
+    st.markdown("### OGC Climate Stack API (CSAPI) — Live Explorer")
     st.caption("OGC API-Features · OGC API-EDR · OGC CSAPI · W3C WoT · Standards-native drought intelligence")
 
     # ── Conformance banner ────────────────────────────────────────────────────
@@ -1278,7 +1277,7 @@ Aganitha Space Technologies is an active contributor to the OGC CSAPI Standards 
     st.markdown("---")
 
     # ── Benchmark comparison ──────────────────────────────────────────────────
-    st.subheader("📊 Benchmark — Anvīkṣaṇa vs SPI-3 Baseline (WMO Standard)")
+    st.subheader("Benchmark — Anvīkṣaṇa vs SPI-3 Baseline (WMO Standard)")
     st.caption("Evaluated against 8 years including 5 government-declared drought years (2002–2021)")
 
     bench_path = BASE / "outputs" / "benchmark_comparison.csv"
@@ -1303,7 +1302,7 @@ Aganitha Space Technologies is an active contributor to the OGC CSAPI Standards 
         with col_b2:
             st.markdown("**Unique capability — 15-year projections:**")
             st.success("""
-✅ **SPI-3 has zero projection capability** — it can only describe past/current conditions.
+ **SPI-3 has zero projection capability** — it can only describe past/current conditions.
 
 Anvīkṣaṇa adds:
 - District drought probability to **2040**
@@ -1319,7 +1318,7 @@ This is what makes it a **lending risk tool**, not just a monitoring tool.
     st.markdown("---")
 
     # ── Scalability ───────────────────────────────────────────────────────────
-    st.subheader("🗺️ Scalability — Andhra Pradesh Proof")
+    st.subheader("Scalability — Andhra Pradesh Proof")
     ap_path = BASE / "outputs" / "ap_summary.json"
     if ap_path.exists():
         import json as _json2
