@@ -1,0 +1,18 @@
+{
+  "total_records": 487243,
+  "h3_ndvi_records": 427260,
+  "h3_sm_records": 49261,
+  "mandal_sm_records": 7104,
+  "mandal_ndvi_records": 3552,
+  "ndvi_sm_correlation": 0.447897402028429,
+  "ndvi_dates": 20,
+  "sm_months": 12,
+  "districts": 33,
+  "mandals": 576,
+  "h3_cells_ndvi": 21363,
+  "h3_cells_sm": 14518,
+  "driest_district_april": "Jogulamba Gadwal",
+  "lowest_ndvi_month": "April",
+  "peak_ndvi_month": "October",
+  "peak_sm_month": "August"
+}
