@@ -150,8 +150,7 @@ if page == "📊 Overview":
         top10["Risk"] = top10["cdsi_mean"].apply(cdsi_class)
         top10.columns = ["District","CDSI","NDVI","Soil Moist.","Risk"]
         st.dataframe(
-            top10.style.background_gradient(subset=["CDSI"],cmap="RdYlGn_r")
-                       .format({"CDSI":":.3f","NDVI":":.3f","Soil Moist.":":.3f"}),
+            top10.style.format({"CDSI":":.3f","NDVI":":.3f","Soil Moist.":":.3f"}),
             use_container_width=True, height=300
         )
 
@@ -396,8 +395,7 @@ elif page == "🔮 2026–2040 Projections":
         top_p = proj_yr.nlargest(10,"drought_probability")[
             ["district","drought_probability","cdsi_mean","vulnerability"]]
         st.dataframe(
-            top_p.style.background_gradient(subset=["drought_probability"],cmap="RdYlGn_r")
-                       .format({"drought_probability":"{:.1%}","cdsi_mean":"{:.3f}",
+            top_p.style.format({"drought_probability":"{:.1%}","cdsi_mean":"{:.3f}",
                                 "vulnerability":"{:.2f}"}),
             use_container_width=True,height=300)
         st.metric("Telangana Avg Prob.",
