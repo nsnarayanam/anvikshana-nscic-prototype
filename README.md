@@ -174,9 +174,9 @@ Anvīkṣaṇa is the drought intelligence module of the Aganitha Space Technolo
 Aganitha Space Technologies Pvt. Ltd. is a deep-tech company based in Secunderabad, Hyderabad, building standards-native Earth Intelligence infrastructure for climate resilience, food security, and sustainable development.
 
 - DPIIT Recognised Startup (DIPP162965)
-- IIT Bombay Research Partnership (CSRE, Prof. Surya S. Durbha)
+- IIT Bombay Research Partnership 
 - Active in OGC, IEEE GRSS, W3C WoT standards bodies
-- Solar Impulse Foundation Member
+- Solar Impulse Foundation Global Efficent Member
 
 **Contact:** nsnarayanam@aganithaspace.com  
 **Website:** [www.aganithaspace.com](https://www.aganithaspace.com)
