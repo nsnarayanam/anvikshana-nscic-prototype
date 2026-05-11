@@ -1,0 +1,38 @@
+{
+  "dataset": "Groundnut Water Stress (UC-HSI / IIT-H TiHAN)",
+  "samples": {
+    "total": 16667,
+    "train": 11665,
+    "val": 2501,
+    "test": 2501
+  },
+  "n_bands": 300,
+  "classes": {
+    "0": 7954,
+    "1": 8713
+  },
+  "results": {
+    "RandomForest": {
+      "test_acc": 0.9744,
+      "f1_macro": 0.9743,
+      "roc_auc": 0.9976
+    },
+    "SVM_RBF": {
+      "test_acc": 0.9988,
+      "f1_macro": 0.9988,
+      "roc_auc": 1.0
+    },
+    "1D_CNN": {
+      "test_acc": 0.9996,
+      "f1_macro": 0.9996,
+      "roc_auc": 0.9999
+    },
+    "LogReg_band161": {
+      "test_acc": 0.7273
+    },
+    "LogReg_brightness": {
+      "test_acc": 0.5834
+    }
+  },
+  "interpretation": "Mean class spectra overlap within 1 std across 400-2500 nm. Linear single-feature baselines achieve 58-73% accuracy. Non-linear multivariate models (RF, SVM, CNN) all converge near 99% accuracy, indicating that the water-stress signature is subtle, distributed across bands, and non-linear \u2014 recoverable only via modern ML, not by traditional vegetation indices."
+}
