@@ -170,6 +170,13 @@ Anvīkṣaṇa is the drought intelligence module of the Aganitha Space Technolo
 
 ---
 
+---
+
+## Complementary capability module — Hyperspectral Water Stress Detection
+
+The [`modules/hyperspectral_water_stress/`](modules/hyperspectral_water_stress/) folder contains a pixel-level hyperspectral water-stress classifier (groundnut, 99.96% test accuracy, validated on the IIT-H TiHAN UC-HSI dataset) that demonstrates Anvīkṣaṇa's multi-scale architecture — from individual canopy spectra to mandal-level aggregation. The hyperspectral classifier complements the main mandal-level NSCIC dashboard at a different sensor modality and spatial scale, feeding finer-grained ground-truth signals into the same DGGS-indexed knowledge graph. See the [module README](modules/hyperspectral_water_stress/README.md) for full results, methodology, and data licensing.
+
+
 ## About Aganitha Space Technologies
 
 Aganitha Space Technologies Pvt. Ltd. is a deep-tech company based in Secunderabad, Hyderabad, building standards-native Earth Intelligence infrastructure for climate resilience, food security, and sustainable development.
