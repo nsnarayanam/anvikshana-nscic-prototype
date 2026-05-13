@@ -1,5 +1,22 @@
+# Anvīkṣaṇa — Agricultural Drought Intelligence
+# NSCIC Stage 2 · Aganitha Space Technologies Pvt. Ltd.
+# Install: pip install -r requirements.txt
+
+# ── Core dashboard ────────────────────────────────────────────────────────────
 streamlit>=1.32.0
 pandas>=2.0.0
 numpy>=1.24.0
 plotly>=5.18.0
 pyarrow>=12.0.0
+
+# ── Geospatial ────────────────────────────────────────────────────────────────
+h3>=3.7.6
+
+# ── OGC API server (optional — run locally with: uvicorn ogc_api:app --port 8502) ──
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
+# ── Data processing ───────────────────────────────────────────────────────────
+scipy>=1.11.0
+scikit-learn>=1.3.0
+requests>=2.31.0
