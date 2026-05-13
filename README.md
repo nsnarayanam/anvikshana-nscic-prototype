@@ -1,27 +1,41 @@
-<img width="1196" height="820" alt="AgST logo" src="https://github.com/user-attachments/assets/9562afac-42f1-47a8-a07d-f4b881811b74" />
-# Anvīkṣaṇa — Agricultural Drought Intelligence
-### NSCIC Stage 2 Prototype | National Climate Stack Innovation Challenge
+<p align="center">
+  <img src="AgST logo.png" alt="Aganitha Space Technologies" width="180"/>
+</p>
 
-**Aganitha Space Technologies Pvt. Ltd.** · Secunderabad, Hyderabad · May 2026
+<h1 align="center">Anvīkṣaṇa — Agricultural Drought Intelligence</h1>
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Data: DiCRA](https://img.shields.io/badge/Data-DiCRA%20%2F%20UNDP-blue.svg)](https://dicra.undp.org.in)
-[![OGC CSAPI](https://img.shields.io/badge/Standard-OGC%20CSAPI-orange.svg)](https://ogcapi.ogc.org)
+<p align="center">
+  <strong>NSCIC Stage 2 Prototype | National Climate Stack Innovation Challenge</strong><br/>
+  <strong>Aganitha Space Technologies Pvt. Ltd.</strong> · Secunderabad, Hyderabad · May 2026
+</p>
+
+<p align="center">
+  <a href="https://anvikshana-nscic-prototype-863x8w2jstcmawtjtrvrvk.streamlit.app">
+    <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit App"/>
+  </a>
+  &nbsp;
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"/></a>
+  &nbsp;
+  <a href="https://dicra.undp.org.in"><img src="https://img.shields.io/badge/Data-DiCRA%20%2F%20UNDP-blue.svg" alt="DiCRA"/></a>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Standard-OGC%20CSAPI-orange.svg" alt="OGC CSAPI"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Standard-IEEE%20P4011-lightblue.svg" alt="IEEE P4011"/>
+</p>
+
+---
+
+## 🌐 Live Dashboard
+
+**[→ Launch Anvīkṣaṇa Dashboard](https://anvikshana-nscic-prototype-863x8w2jstcmawtjtrvrvk.streamlit.app)**
 
 ---
 
 ## What This Is
 
-Anvīkṣaṇa is an agricultural drought intelligence platform built on real satellite data from [DiCRA (UNDP India)](https://dicra.undp.org.in) — a Digital Public Good. It ingests mandal-level NDVI, soil moisture, and land surface temperature data, computes internationally recognised drought indices, and projects district-level drought probability 15 years forward under SSP2-4.5 and SSP5-8.5 climate scenarios.
+Anvīkṣaṇa is a mandal-level agricultural drought intelligence platform built on real satellite data from [DiCRA / UNDP India](https://dicra.undp.org.in) — a Digital Public Good. It ingests NDVI, soil moisture, and land surface temperature data across 592 Telangana mandals, computes internationally recognised drought indices (VCI, CDSI), and projects district-level drought probability 15 years forward under SSP2-4.5 and SSP5-8.5 climate scenarios.
 
-Built for NABARD and climate-resilient lending — giving lenders a science-based drought risk signal before loan origination, not after crop loss.
-
----
-
-## Live Dashboard
-
-🚀 **[Launch Anvīkṣaṇa Dashboard →](https://share.streamlit.io)**
+**Primary use case:** Pre-loan drought risk scoring for NABARD KCC disbursement — delivering a 45–60 day early warning over existing approaches, at 5× finer spatial resolution than district-level SPI.
 
 ---
 
@@ -30,181 +44,192 @@ Built for NABARD and climate-resilient lending — giving lenders a science-base
 | Metric | Value |
 |--------|-------|
 | Real DiCRA records processed | **487,243** |
-| Mandal polygons (real boundaries) | **592** |
+| Mandal polygons (real DiCRA boundaries) | **592** |
 | Districts covered | **33 (Telangana)** |
-| Biweekly NDVI observations | **23 dates · 2025** |
-| Model ROC-AUC (spatial CV) | **0.974 ± 0.004** |
+| Biweekly NDVI observation dates | **23 dates · 2025 + 23 dates · 2018** |
+| Model ROC-AUC (spatial cross-validation) | **0.974 ± 0.004** |
 | F1 Score | **0.801 ± 0.032** |
 | Brier Score | **0.058** |
+| 2018 drought year detection | **100% — all 33 declared districts** |
+| Benchmark vs SPI-3 baseline | **+25pp accuracy · +45 days lead time** |
 | Projection horizon | **2026–2040** |
 | Climate scenarios | **SSP2-4.5 · SSP5-8.5** |
+| Ensemble members | **20** |
+| Scalability | **Andhra Pradesh proven · 4 states ready** |
 
 ---
 
 ## Architecture — 4 Layers
 
 ```
-Layer 1 — Data Inputs
-    DiCRA NDVI vectors (592 mandal polygons, 23 biweekly dates)
-    DiCRA Soil Moisture Index (576 mandals, 12 months)
-    DiCRA Land Surface Temperature (H3 Res-7 indexed)
-    H3 DGGS indexing at Resolution 7 (21,363 cells)
+Layer 1 — Data Inputs (100% Real)
+    DiCRA NDVI vectors (592 mandal polygons · 23 biweekly dates · 2025 + 2018)
+    DiCRA Soil Moisture Index (576 mandals · 12 months)
+    DiCRA Land Surface Temperature (H3 Res-7 indexed · 21,363 cells)
+    NASA POWER GMAO 2000–2024 (25-year climate baseline)
+    IMD Live Rainfall API (real-time validation)
 
 Layer 2 — Modelling Engine
-    VCI (Vegetation Condition Index) — FAO / ISRO standard
-    CDSI (Combined Drought Severity Index) = 0.6×VCI + 0.4×SMDI
-    Random Forest Classifier (binary drought detection)
-    Gradient Boosting Regressor (continuous CDSI)
+    VCI = (NDVI − NDVImin) / (NDVImax − NDVImin) × 100  [FAO/ISRO standard]
+    CDSI = 0.6 × VCI + 0.4 × SMDI
+    Random Forest Classifier (binary drought detection, 200 trees)
+    Gradient Boosting Regressor (continuous CDSI, 200 estimators)
     16 engineered features: lag-1/3/6, rolling-3/6, NDVI×SM interaction
     Spatial cross-validation: GroupKFold (k=5), district hold-out
 
 Layer 3 — Forward Projections (2026–2040)
     IPCC AR6 WG1 South Asia regional change factors
-    SSP2-4.5 and SSP5-8.5 scenarios
-    20-member ensemble for uncertainty quantification
+    SSP2-4.5 (moderate) and SSP5-8.5 (high emissions) scenarios
+    20-member ensemble uncertainty quantification
     District-level drought probability surfaces
 
-Layer 4 — Application Layer
-    Interactive Streamlit dashboard (5 pages)
-    Real mandal-level choropleth maps (DiCRA polygon boundaries)
-    Seasonal time series, scenario explorer, model validation
-    OGC CSAPI compliant · Standards-native architecture
+Layer 4 — Application & API Layer
+    9-page interactive Streamlit dashboard (live URL above)
+    OGC CSAPI-compliant API endpoint (ogc_api.py)
+    DiCRA 2.0 contribution layer (GeoJSON FeatureCollection)
+    NABARD pre-loan risk scoring interface
 ```
 
 ---
 
-## Dashboard Pages
+## Dashboard Pages (9)
 
 | Page | Description |
 |------|-------------|
-| Overview | KPI cards · district scatter map · seasonal NDVI cycle · feature importance |
-| Mandal Drought Map | Real polygon choropleth · 592 DiCRA boundaries · date slider · NDVI/SM/CDSI toggle |
-| Seasonal Analysis | District time series · all-district NDVI heatmap · correlation analysis |
-| 2026–2040 Projections | Year slider · scenario toggle · uncertainty bands · SSP2 vs SSP5 |
-| Model Validation | ROC-AUC · Brier Score · spatial CV methodology · data provenance |
+| 📊 Overview | KPI cards · district scatter map · seasonal NDVI cycle · feature importance |
+| 🗺️ Mandal Drought Map | Real polygon choropleth · 592 DiCRA boundaries · date slider · NDVI/SM/CDSI toggle |
+| 📈 Seasonal Analysis | District time series · all-district NDVI heatmap · correlation r=0.45 |
+| 🔁 2018 vs 2025 Comparison | Historical drought validation · 33 districts · monthly NDVI delta |
+| 🌧️ NASA POWER & SPI | 25-year climate baseline · SPI-3/6 · drought climatology 2000–2024 |
+| 🚨 IMD Live Alerts | Real-time rainfall deficit · live validation against model predictions |
+| 🔮 2026–2040 Projections | Year slider · SSP scenario toggle · uncertainty bands · top at-risk districts |
+| 🤖 Model Validation | ROC-AUC · Brier · spatial CV methodology · data provenance |
+| 🔌 OGC API Explorer | Live GeoJSON responses · EDR position query · benchmark vs SPI-3 · AP scalability |
 
 ---
 
-## Drought Indices
+## OGC API Endpoint
 
-### Vegetation Condition Index (VCI)
-```
-VCI = (NDVI − NDVIₘᵢₙ) / (NDVIₘₐₓ − NDVIₘᵢₙ) × 100
-```
-- Computed per mandal using 2025 historical NDVI envelope (23 biweekly dates)
-- 0 = Extreme Drought · 100 = No Drought
-- Standard used by FAO, ISRO FASAL programme, NOAA Drought Monitor
-
-| VCI Range | Class |
-|-----------|-------|
-| 0–10 | Extreme Drought |
-| 10–20 | Severe Drought |
-| 20–35 | Moderate Drought |
-| 35–50 | Watch |
-| 50+ | No Drought |
-
-### Key Finding — 2025 Telangana
-- **April VCI = 17.9** → Severe Drought (pre-monsoon stress)
-- **September VCI = 89.6** → No Drought (Kharif peak)
-- **7.4× seasonal swing** confirms DiCRA data quality
-- **Most vulnerable districts**: Medak, Mahabubnagar, Narayanpet, Nagarkurnool
-
----
-
-## Data Sources
-
-All data sourced from **DiCRA (Data in Climate Resilient Agriculture)** — an open Digital Public Good facilitated by UNDP India and Government of Telangana.
-
-| Dataset | Source | Records |
-|---------|--------|---------|
-| NDVI Vectors (mandal polygons) | DiCRA / UNDP India | 13,616 (592×23) |
-| NDVI H3 Grid (Res-7) | DiCRA / UNDP India | 427,260 |
-| Soil Moisture | DiCRA / UNDP India | 56,365 |
-| Land Surface Temperature | DiCRA / UNDP India | H3 indexed |
-| **Total** | **DiCRA (UNDP India)** | **487,243** |
-
----
-
-## Run Locally
+`ogc_api.py` implements a fully OGC-compliant REST API:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/anvikshana-nscic-prototype.git
-cd anvikshana-nscic-prototype
-pip install -r requirements.txt
-streamlit run dashboard.py
+# Run locally
+pip install fastapi uvicorn
+uvicorn ogc_api:app --host 0.0.0.0 --port 8502 --reload
 ```
 
-Open `http://localhost:8501`
+| Endpoint | Description |
+|----------|-------------|
+| `GET /` | Landing page (OGC conformance) |
+| `GET /conformance` | 7 OGC conformance classes declared |
+| `GET /collections` | drought-index · drought-projections |
+| `GET /collections/drought-index/items` | Current mandal VCI/CDSI as GeoJSON FeatureCollection |
+| `GET /collections/drought-projections/items` | 2026–2040 district projections · SSP2/SSP5 |
+| `GET /position?coords=POINT(lon lat)` | OGC API-EDR nearest-mandal drought value |
+| `GET /health` | Data provenance · model metrics · standards conformance |
+
+**Conforms to:** OGC API-Features 1.0 · OGC API-EDR 1.1 · OGC CSAPI draft · W3C WoT/SSN · ISO 19179 (under review)
 
 ---
 
-## Deploy to Streamlit Cloud
+## Historical Validation — 2018 vs 2025
 
-1. Fork this repo
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. New app → select repo → Main file: `dashboard.py`
-4. Deploy → live URL in ~3 minutes
+| Metric | 2018 (Declared Drought) | 2025 (Current) |
+|--------|------------------------|----------------|
+| Mean VCI (cross-year) | 36.9 — Watch/Moderate | 52.6 — No Drought |
+| Driest month VCI | May: 12.8 (Severe Drought) | April: 28.8 |
+| Model detection | ✅ All 33 districts flagged | — |
+| False negatives | 0 | — |
 
----
-
-## Standards & Compliance
-
-- **OGC CSAPI** — Climate Stack API standards (active contributor, OGC SWG)
-- **H3 DGGS** — Uber H3 Discrete Global Grid System at Resolution 7
-- **IEEE GRSS** — Earth Observation standards alignment
-- **W3C WoT** — Web of Things working group
-- **DiCRA** — UN Digital Public Good principles (open data, open code, open API)
+**2018 is a government-declared drought year (all 33 Telangana districts).** The model was trained on 2025 data and tested blind on 2018 labels — 100% detection rate.
 
 ---
 
-## About Anvīkṣaṇa
+## Benchmark vs SPI-3 (WMO Standard)
 
-Anvīkṣaṇa is the drought intelligence module of the Aganitha Space Technologies Earth Intelligence Platform. The platform consists of six modules:
-
-- **Arunam** — Solar & air quality intelligence (Solar Impulse Global Efficient Solution label)
-- **HaritGlo** — Carbon MRV
-- **Pavanapatha** — Atmospheric & multi-hazard monitoring
-- **Samudranetra** — Ocean & coastal intelligence
-- **INDRANET** — IoT sensor mesh
-- **Ātmanetra** — Orbital edge AI
-
----
-
----
-
-## Complementary capability module — Hyperspectral Water Stress Detection
-
-The [`modules/hyperspectral_water_stress/`](modules/hyperspectral_water_stress/) folder contains a pixel-level hyperspectral water-stress classifier (groundnut, 99.96% test accuracy, validated on the IIT-H TiHAN UC-HSI dataset) that demonstrates Anvīkṣaṇa's multi-scale architecture — from individual canopy spectra to mandal-level aggregation. The hyperspectral classifier complements the main mandal-level NSCIC dashboard at a different sensor modality and spatial scale, feeding finer-grained ground-truth signals into the same DGGS-indexed knowledge graph. See the [module README](modules/hyperspectral_water_stress/README.md) for full results, methodology, and data licensing.
-
-
-## About Aganitha Space Technologies
-
-Aganitha Space Technologies Pvt. Ltd. is a deep-tech company based in Secunderabad, Hyderabad, building standards-native Earth Intelligence infrastructure for climate resilience, food security, and sustainable development.
-
-- DPIIT Recognised Startup (DIPP162965)
-- IIT Bombay Research Partnership 
-- Active in OGC, IEEE GRSS, W3C WoT standards bodies
-- Solar Impulse Foundation Global Efficent Member
-
-**Contact:** nsnarayanam@aganithaspace.com  
-**Website:** [www.aganithaspace.com](https://www.aganithaspace.com)
+| Metric | SPI-3 Baseline | Anvīkṣaṇa |
+|--------|---------------|-----------|
+| Overall accuracy (8 years) | 75% | **100%** |
+| Drought detection rate | 80% | **100%** |
+| False alarm rate | 67% | **0%** |
+| Lead time before crop loss | 0 days | **45–60 days** |
+| Spatial resolution | District | **Mandal (592)** |
+| Forward projection | None | **2026–2040** |
+| ROC-AUC | N/A | **0.974 ± 0.004** |
 
 ---
 
-## Citation
+## Scalability — Andhra Pradesh Proven
 
-If you use this work, please cite:
+The same pipeline runs on Andhra Pradesh with zero code changes:
+- 13 AP districts · 4 agro-climatic zones · 390 projection rows
+- Rayalaseema: 59.7% drought probability by 2040 (SSP5-8.5)
+- Next states: Maharashtra · Karnataka · Madhya Pradesh · Odisha
+
+---
+
+## Repository Structure
 
 ```
-Narayanam, N.S. (2026). Anvīkṣaṇa: Agricultural Drought Intelligence 
-for Climate-Resilient Lending. NSCIC Stage 2 Prototype. 
-Aganitha Space Technologies Pvt. Ltd., Hyderabad, India.
-Data: DiCRA / UNDP India (Digital Public Good).
+anvikshana-nscic-prototype/
+├── dashboard.py                          # 9-page Streamlit dashboard (1,362 lines)
+├── ogc_api.py                            # OGC CSAPI-compliant FastAPI endpoint
+├── requirements.txt                      # Python dependencies
+├── mandal_ndvi_2018_full.csv             # 2018 historical NDVI (13,616 rows)
+├── district_comparison_2018_2025.csv     # 2018 vs 2025 district comparison
+├── AgST logo.png                         # Aganitha Space Technologies logo
+├── data/
+│   └── geojson_ndvi/                     # 23 × 2025 GeoJSON + CSVs + climate data
+├── outputs/
+│   ├── drought_projections_2026_2040.csv # 15-year district projections
+│   ├── feature_importance.csv            # RF model feature weights
+│   ├── validation_metrics.json           # Spatial CV results
+│   ├── benchmark_comparison.csv          # Anvīkṣaṇa vs SPI-3 (8 years)
+│   ├── benchmark_summary.json            # Benchmark summary stats
+│   ├── ap_drought_projections_2026_2040.csv  # AP scalability proof
+│   └── ap_summary.json                   # AP scalability summary
+└── scripts/
+    ├── 01_imd_data.py                    # IMD rainfall ingestion
+    ├── 02_dicra_data.py                  # DiCRA NDVI + SM processing
+    ├── 03_drought_model.py               # RF + GBR model training
+    ├── 04_benchmark.py                   # Benchmark vs SPI-3 baseline
+    └── 05_ap_scalability.py              # Andhra Pradesh scalability proof
 ```
 
 ---
 
-## License
+## Standards Body Participation
 
-MIT License — see [LICENSE](LICENSE) for details.  
-Data sourced from DiCRA is subject to [DiCRA Terms of Service](https://dicra.undp.org.in).
+Aganitha Space Technologies is an active contributor to:
+
+- **OGC CSAPI Standards Working Group** — Anvīkṣaṇa's UAS Analytics page inspired the collaborative CSAPI Explorer at [ogc-csapi-explorer.pages.dev](https://ogc-csapi-explorer.pages.dev/analytics)
+- **IEEE GRSS P4011** — Voting Member (Disaster Intelligence and Earth Observation standards)
+- **W3C Web of Things Working Group**
+- **ISO/TC 211** — Formal comment submitted on ISO/CD TR 19179
+
+---
+
+## IP & Legal
+
+- Core methodology: 4 Indian patents filed  · PCT filing planned
+- Trademarks filed
+- This repository is licensed under MIT. Use requires attribution to Aganitha Space Technologies Pvt. Ltd.
+- *Patent pending. Platform name Anvīkṣaṇa is a trademark of Aganitha Space Technologies Pvt. Ltd.*
+
+---
+
+## Organisation
+
+**Aganitha Space Technologies Pvt. Ltd.**
+Secunderabad, Hyderabad, Telangana, India
+
+**Founder & MD:** Narasimha Sharma Narayanam
+OGC CSAPI SWG · IEEE GRSS P4011 · W3C WoT WG · Royal Aeronautical Society (Associate) · IET (Fellow)
+
+📧 nsnarayanam@aganithaspace.com
+🌐 [Live Dashboard](https://anvikshana-nscic-prototype-863x8w2jstcmawtjtrvrvk.streamlit.app)
+
+---
+
+*Data: DiCRA / UNDP India (Digital Public Good) · NASA POWER / GMAO · India Meteorological Department*
+*Model: Aganitha Space Technologies Pvt. Ltd. · NSCIC Stage 2 · May 2026*
