@@ -1030,17 +1030,13 @@ The model predicts drought — IMD confirms drought is happening.
             st.caption("Source: India Meteorological Department API (districtrainfall endpoint) · 25 April 2026")
             
 # ══════════════════════════════════════════════════════════════════════════════
-# PAGE — CROP YIELD RISK SCORE
-# Add this to your sidebar navigation list:
-#   "🌾 Crop Yield Risk Score",
-# And add this block at the end of your dashboard.py
+# PAGE — CROP YIELD RISK SCORE (fixed version)
 # ══════════════════════════════════════════════════════════════════════════════
 
 elif page == "🌾 Crop Yield Risk Score":
     st.markdown("### 🌾 Crop Yield Risk Score — NABARD Pre-Loan Decision Tool")
     st.caption("One number per mandal · Before the season starts · 45 days earlier than any existing tool")
 
-    # ── What this is ──────────────────────────────────────────────────────────
     st.info("""
 **For NABARD loan officers and state agriculture departments:**
 This page answers one question — *will crop yield be high or low in this mandal this season?*
@@ -1049,12 +1045,7 @@ The Crop Yield Risk Score (0–100) is derived from our satellite VCI index.
 It translates complex satellite data into a single traffic-light signal a banker can act on — before disbursing a KCC loan.
     """)
 
-    # ── Load data ─────────────────────────────────────────────────────────────
     latest = merged[merged["date"] == merged["date"].max()].copy()
-
-    # Compute Crop Yield Risk Score from VCI / CDSI
-    # Higher CDSI = healthier crop = higher yield expected = lower risk
-    # Score 0-100: 0 = extreme crop failure risk, 100 = excellent yield expected
     latest["crop_yield_score"] = (latest["cdsi"] * 100).clip(0, 100).round(1)
 
     def yield_class(score):
@@ -1075,28 +1066,26 @@ It translates complex satellite data into a single traffic-light signal a banker
         elif score >= 25: return "🔶 Hold or reduce loan — yield stress detected"
         else:             return "🛑 Do not disburse — high default risk · Trigger PMFBY"
 
-    latest["yield_class"]   = latest["crop_yield_score"].apply(yield_class)
-    latest["loan_action"]   = latest["crop_yield_score"].apply(loan_action)
+    latest["yield_class"] = latest["crop_yield_score"].apply(yield_class)
+    latest["loan_action"] = latest["crop_yield_score"].apply(loan_action)
 
-    # ── State-level KPI row ───────────────────────────────────────────────────
-    good     = len(latest[latest["crop_yield_score"] >= 65])
-    watch    = len(latest[(latest["crop_yield_score"] >= 45) & (latest["crop_yield_score"] < 65)])
-    poor     = len(latest[(latest["crop_yield_score"] >= 25) & (latest["crop_yield_score"] < 45)])
-    failure  = len(latest[latest["crop_yield_score"] < 25])
-    total    = len(latest)
+    good    = len(latest[latest["crop_yield_score"] >= 65])
+    watch   = len(latest[(latest["crop_yield_score"] >= 45) & (latest["crop_yield_score"] < 65)])
+    poor    = len(latest[(latest["crop_yield_score"] >= 25) & (latest["crop_yield_score"] < 45)])
+    failure = len(latest[latest["crop_yield_score"] < 25])
+    total   = len(latest)
     avg_score = latest["crop_yield_score"].mean()
 
     c1, c2, c3, c4, c5 = st.columns(5)
     c1.metric("State Avg Score", f"{avg_score:.0f}/100",
               "Good" if avg_score >= 65 else ("Watch" if avg_score >= 45 else "At Risk"))
-    c2.metric("🟢 Good Yield",        f"{good} mandals",   f"{good/total*100:.0f}% of state")
-    c3.metric("🟡 Yield at Risk",     f"{watch} mandals",  f"{watch/total*100:.0f}% of state")
-    c4.metric("🟠 Poor Yield Likely", f"{poor} mandals",   f"{poor/total*100:.0f}% of state")
-    c5.metric("🔴 Failure Risk",      f"{failure} mandals",f"{failure/total*100:.0f}% of state")
+    c2.metric("🟢 Good Yield",        f"{good} mandals",   f"{good/total*100:.0f}%")
+    c3.metric("🟡 Yield at Risk",     f"{watch} mandals",  f"{watch/total*100:.0f}%")
+    c4.metric("🟠 Poor Yield Likely", f"{poor} mandals",   f"{poor/total*100:.0f}%")
+    c5.metric("🔴 Failure Risk",      f"{failure} mandals",f"{failure/total*100:.0f}%")
 
     st.markdown("---")
 
-    # ── District-level summary ────────────────────────────────────────────────
     col1, col2 = st.columns([1.4, 1])
 
     with col1:
@@ -1109,9 +1098,7 @@ It translates complex satellite data into a single traffic-light signal a banker
             lon=("longitude", "mean")
         ).reset_index().sort_values("avg_score")
 
-        dist_score["yield_class"] = dist_score["avg_score"].apply(yield_class)
-        dist_score["loan_action"] = dist_score["avg_score"].apply(loan_action)
-        dist_score["color"]       = dist_score["avg_score"].apply(yield_color)
+        dist_score["color"] = dist_score["avg_score"].apply(yield_color)
 
         fig_dist = go.Figure()
         fig_dist.add_trace(go.Bar(
@@ -1122,22 +1109,29 @@ It translates complex satellite data into a single traffic-light signal a banker
             text=dist_score["avg_score"].round(0).astype(int).astype(str) + "/100",
             textposition="outside",
         ))
-        fig_dist.add_vline(x=65, line_dash="dash", line_color="#15803D",
-                           annotation_text="Good yield threshold")
-        fig_dist.add_vline(x=45, line_dash="dash", line_color="#D97706",
-                           annotation_text="Risk threshold")
-        fig_dist.add_vline(x=25, line_dash="dash", line_color="#B91C1C",
-                           annotation_text="Failure threshold")
+        # Clean threshold lines without overlapping annotations
+        fig_dist.add_vline(x=25, line_dash="dot", line_color="#B91C1C", line_width=1.5)
+        fig_dist.add_vline(x=45, line_dash="dot", line_color="#D97706", line_width=1.5)
+        fig_dist.add_vline(x=65, line_dash="dot", line_color="#15803D", line_width=1.5)
+
+        # Zone background fills instead of text labels
+        fig_dist.add_vrect(x0=0,  x1=25, fillcolor="#B91C1C", opacity=0.05, line_width=0)
+        fig_dist.add_vrect(x0=25, x1=45, fillcolor="#EA580C", opacity=0.05, line_width=0)
+        fig_dist.add_vrect(x0=45, x1=65, fillcolor="#D97706", opacity=0.05, line_width=0)
+        fig_dist.add_vrect(x0=65, x1=105,fillcolor="#15803D", opacity=0.05, line_width=0)
+
         fig_dist.update_layout(
-            height=600, margin=dict(l=0, r=60, t=10, b=0),
-            xaxis=dict(range=[0, 105], title="Crop Yield Risk Score (0-100)"),
-            xaxis_title="Crop Yield Risk Score (0 = Failure Risk, 100 = Excellent Yield)"
+            height=600,
+            margin=dict(l=0, r=60, t=10, b=40),
+            xaxis=dict(range=[0, 108],
+                       title="← Failure Risk  |  Poor  |  Watch  |  Good Yield →",
+                       tickvals=[0,25,45,65,100],
+                       ticktext=["0","25\nFailure","45\nWatch","65\nGood","100"]),
         )
         st.plotly_chart(fig_dist, use_container_width=True)
 
     with col2:
         st.subheader("NABARD Loan Action Guide")
-
         st.markdown("""
 | Score | Signal | NABARD Action |
 |-------|--------|---------------|
@@ -1149,34 +1143,32 @@ It translates complex satellite data into a single traffic-light signal a banker
 
         st.markdown("---")
         st.subheader("Top 5 High-Risk Districts")
-        top5 = dist_score.head(5)[["district", "avg_score", "loan_action"]]
+        top5 = dist_score.head(5)
         for _, row in top5.iterrows():
             score = row["avg_score"]
             col = yield_color(score)
-            st.markdown(
-                f"**{row['district']}** — Score: **{score:.0f}/100**",
-            )
-            st.markdown(f"<small style='color:{col}'>{row['loan_action']}</small>",
+            st.markdown(f"**{row['district']}** — **{score:.0f}/100**")
+            st.markdown(f"<small style='color:{col}'>{loan_action(score)}</small>",
                         unsafe_allow_html=True)
             st.markdown("---")
 
         st.subheader("Top 5 Safe Districts")
-        top5safe = dist_score.tail(5)[["district", "avg_score", "loan_action"]].iloc[::-1]
+        top5safe = dist_score.tail(5).iloc[::-1]
         for _, row in top5safe.iterrows():
             score = row["avg_score"]
             col = yield_color(score)
-            st.markdown(f"**{row['district']}** — Score: **{score:.0f}/100**")
-            st.markdown(f"<small style='color:{col}'>{row['loan_action']}</small>",
+            st.markdown(f"**{row['district']}** — **{score:.0f}/100**")
+            st.markdown(f"<small style='color:{col}'>{loan_action(score)}</small>",
                         unsafe_allow_html=True)
             st.markdown("---")
 
     st.markdown("---")
 
-    # ── Mandal-level drill down ───────────────────────────────────────────────
-    st.subheader("Mandal-Level Drill Down — Pick a District")
+    # ── Mandal drill down ─────────────────────────────────────────────────────
+    st.subheader("Mandal-Level Drill Down — Select a District")
 
     all_districts = sorted(latest["district"].unique())
-    sel_dist = st.selectbox("Select District for Mandal-Level View",
+    sel_dist = st.selectbox("Select District",
                             all_districts,
                             index=all_districts.index("Medak") if "Medak" in all_districts else 0)
 
@@ -1193,66 +1185,66 @@ It translates complex satellite data into a single traffic-light signal a banker
             text=mandal_data["crop_yield_score"].round(0).astype(int).astype(str) + "/100",
             textposition="outside",
         ))
-        fig_mandal.add_vline(x=65, line_dash="dash", line_color="#15803D")
-        fig_mandal.add_vline(x=45, line_dash="dash", line_color="#D97706")
-        fig_mandal.add_vline(x=25, line_dash="dash", line_color="#B91C1C")
+        fig_mandal.add_vrect(x0=0,  x1=25, fillcolor="#B91C1C", opacity=0.05, line_width=0)
+        fig_mandal.add_vrect(x0=25, x1=45, fillcolor="#EA580C", opacity=0.05, line_width=0)
+        fig_mandal.add_vrect(x0=45, x1=65, fillcolor="#D97706", opacity=0.05, line_width=0)
+        fig_mandal.add_vrect(x0=65, x1=105,fillcolor="#15803D", opacity=0.05, line_width=0)
+        fig_mandal.add_vline(x=25, line_dash="dot", line_color="#B91C1C", line_width=1.5)
+        fig_mandal.add_vline(x=45, line_dash="dot", line_color="#D97706", line_width=1.5)
+        fig_mandal.add_vline(x=65, line_dash="dot", line_color="#15803D", line_width=1.5)
         fig_mandal.update_layout(
-            height=max(300, len(mandal_data) * 22),
+            height=max(300, len(mandal_data) * 25),
             margin=dict(l=0, r=60, t=10, b=0),
             xaxis=dict(range=[0, 110], title="Crop Yield Risk Score"),
         )
         st.plotly_chart(fig_mandal, use_container_width=True)
 
     with col4:
-        st.markdown(f"**{sel_dist} — Mandal Summary**")
+        st.markdown(f"**{sel_dist} — Summary**")
         dist_avg = mandal_data["crop_yield_score"].mean()
         st.metric("District Average", f"{dist_avg:.0f}/100")
         st.metric("Mandals at Failure Risk (< 25)",
                   f"{len(mandal_data[mandal_data['crop_yield_score'] < 25])}")
         st.metric("Mandals Safe (> 65)",
                   f"{len(mandal_data[mandal_data['crop_yield_score'] >= 65])}")
-
         st.markdown("---")
         st.markdown("**Mandal Action Table**")
-        display = mandal_data[["mandal", "crop_yield_score", "loan_action"]].copy()
-        display.columns = ["Mandal", "Score", "NABARD Action"]
+        display = mandal_data[["mandal","crop_yield_score","loan_action"]].copy()
+        display.columns = ["Mandal","Score","NABARD Action"]
         display["Score"] = display["Score"].round(0).astype(int)
         st.dataframe(display, use_container_width=True, hide_index=True, height=350)
 
     st.markdown("---")
 
-    # ── Seasonal projection ───────────────────────────────────────────────────
+    # ── Seasonal trend ────────────────────────────────────────────────────────
     st.subheader("Seasonal Crop Yield Risk Trend — 2025")
 
-    monthly_score = merged.groupby("month").agg(
-        avg_cdsi=("cdsi", "mean")
-    ).reset_index()
+    monthly_score = merged.groupby("month").agg(avg_cdsi=("cdsi","mean")).reset_index()
     monthly_score["crop_yield_score"] = (monthly_score["avg_cdsi"] * 100).clip(0, 100)
-
     MONTH_NAMES = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",
                    7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
     monthly_score["month_label"] = monthly_score["month"].map(MONTH_NAMES)
 
     fig_trend = go.Figure()
+    fig_trend.add_hrect(y0=65, y1=100, fillcolor="#15803D", opacity=0.07, line_width=0,
+                        annotation_text="🟢 Good Yield", annotation_position="top left")
+    fig_trend.add_hrect(y0=45, y1=65, fillcolor="#D97706", opacity=0.07, line_width=0,
+                        annotation_text="🟡 Watch", annotation_position="top left")
+    fig_trend.add_hrect(y0=25, y1=45, fillcolor="#EA580C", opacity=0.07, line_width=0,
+                        annotation_text="🟠 Poor", annotation_position="top left")
+    fig_trend.add_hrect(y0=0, y1=25, fillcolor="#B91C1C", opacity=0.07, line_width=0,
+                        annotation_text="🔴 Failure Risk", annotation_position="top left")
     fig_trend.add_trace(go.Scatter(
         x=monthly_score["month_label"],
         y=monthly_score["crop_yield_score"],
         mode="lines+markers",
         line=dict(color="#0A7B6E", width=3),
-        marker=dict(size=8,
-                    color=[yield_color(s) for s in monthly_score["crop_yield_score"]]),
+        marker=dict(size=9,
+                    color=[yield_color(s) for s in monthly_score["crop_yield_score"]],
+                    line=dict(color="white", width=1.5)),
         fill="tozeroy",
-        fillcolor="rgba(10,123,110,0.08)",
-        name="Crop Yield Score"
+        fillcolor="rgba(10,123,110,0.06)",
     ))
-    fig_trend.add_hrect(y0=65, y1=100, fillcolor="#15803D", opacity=0.05,
-                        annotation_text="Good Yield Zone", annotation_position="top left")
-    fig_trend.add_hrect(y0=45, y1=65, fillcolor="#D97706", opacity=0.05,
-                        annotation_text="Watch Zone")
-    fig_trend.add_hrect(y0=25, y1=45, fillcolor="#EA580C", opacity=0.05,
-                        annotation_text="Poor Yield Zone")
-    fig_trend.add_hrect(y0=0, y1=25, fillcolor="#B91C1C", opacity=0.05,
-                        annotation_text="Failure Risk Zone")
     fig_trend.update_layout(
         height=280, margin=dict(l=0, r=0, t=10, b=0),
         yaxis=dict(range=[0, 100], title="Crop Yield Risk Score"),
