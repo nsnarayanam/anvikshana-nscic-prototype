@@ -64,8 +64,7 @@ Anvīkṣaṇa is a mandal-level agricultural drought intelligence platform buil
 
 ## Architecture — 4 Layers
 
-​```
-Layer 1 — Data Inputs (100% Real)
+​```Layer 1 — Data Inputs (100% Real)
     DiCRA NDVI vectors (592 mandal polygons · 23 biweekly dates · 2025 + 2018)
     DiCRA Soil Moisture Index (576 mandals · 12 months)
     DiCRA Land Surface Temperature (H3 Res-7 indexed · 21,363 cells)
