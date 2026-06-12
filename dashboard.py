@@ -122,6 +122,7 @@ with st.sidebar:
         "🌧️ NASA POWER & SPI",
         "🚨 IMD Live Alerts",
         "🔮 2026–2040 Projections",
+        "🌡️ CORDEX-SA Projections",
         "🤖 Model Validation",
         "🌾 Crop Yield Risk Score",
         "🔌 OGC API Explorer",
@@ -1265,6 +1266,7 @@ is scoring 18/100 — and restructure that loan before default happens.
 
 This is the difference between **reactive insurance** and **proactive climate-resilient lending.**
     """)
+    elif page == "🔌 OGC API Explorer":
 
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE — OGC API EXPLORER
