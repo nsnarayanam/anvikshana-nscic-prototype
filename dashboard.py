@@ -1365,9 +1365,8 @@ st.info(
         "ready for ingestion by DiCRA 2.0, NABARD systems, and any GIS platform "
         "supporting OGC API-Features or EDR. Aganitha Space Technologies is an "
         "active contributor to the OGC CSAPI Standards Working Group."
-    )
-
-    # ── Conformance classes ───────────────────────────────────────────────────
+)
+    # ── Conformance classes ──
     col1, col2 = st.columns(2)
 
     with col1:
