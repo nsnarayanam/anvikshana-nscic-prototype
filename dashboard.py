@@ -1360,7 +1360,7 @@ elif page == "🌡️ CORDEX-SA Projections":
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE — OGC API EXPLORER
 # ══════════════════════════════════════════════════════════════════════════════
-    elif page == "🔌 OGC API Explorer":
+elif page == "🔌 OGC API Explorer":
     st.info(
         "**Anvīkṣaṇa exposes its drought outputs as an OGC-compliant API** - "
         "ready for ingestion by DiCRA 2.0, NABARD systems, and any GIS platform "
