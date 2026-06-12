@@ -5,8 +5,8 @@
 <h1 align="center">Anvīkṣaṇa — Agricultural Drought Intelligence</h1>
 
 <p align="center">
-  <strong>NSCIC Stage 2 Prototype | National Climate Stack Innovation Challenge</strong><br/>
-  <strong>Aganitha Space Technologies Pvt. Ltd.</strong> · Secunderabad, Hyderabad · May 2026
+  <strong>NSCIC Stage 3 Finalist | National Climate Stack Innovation Challenge</strong><br/>
+  <strong>Aganitha Space Technologies Pvt. Ltd.</strong> · Secunderabad, Hyderabad · June 2026
 </p>
 
 <p align="center">
@@ -17,6 +17,8 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"/></a>
   &nbsp;
   <a href="https://dicra.undp.org.in"><img src="https://img.shields.io/badge/Data-DiCRA%20%2F%20UNDP-blue.svg" alt="DiCRA"/></a>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Climate-CORDEX--SA-teal.svg" alt="CORDEX-SA"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Standard-OGC%20CSAPI-orange.svg" alt="OGC CSAPI"/>
   &nbsp;
@@ -33,7 +35,7 @@
 
 ## What This Is
 
-Anvīkṣaṇa is a mandal-level agricultural drought intelligence platform built on real satellite data from [DiCRA / UNDP India](https://dicra.undp.org.in) — a Digital Public Good. It ingests NDVI, soil moisture, and land surface temperature data across 592 Telangana mandals, computes internationally recognised drought indices (VCI, CDSI), and projects district-level drought probability 15 years forward under SSP2-4.5 and SSP5-8.5 climate scenarios.
+Anvīkṣaṇa is a mandal-level agricultural drought intelligence platform built on real satellite data from [DiCRA / UNDP India](https://dicra.undp.org.in) — a Digital Public Good. It ingests NDVI, soil moisture, and land surface temperature data across 592 Telangana mandals, computes internationally recognised drought indices (VCI, CDSI), and projects district-level drought probability 15 years forward under RCP/SSP climate scenarios, driven by **CORDEX-SA downscaled regional climate model data** (IITM-RegCM4-4, Copernicus CDS).
 
 **Primary use case:** Pre-loan drought risk scoring for NABARD KCC disbursement — delivering a 45–60 day early warning over existing approaches, at 5× finer spatial resolution than district-level SPI.
 
@@ -53,7 +55,8 @@ Anvīkṣaṇa is a mandal-level agricultural drought intelligence platform buil
 | 2018 drought year detection | **100% — all 33 declared districts** |
 | Benchmark vs SPI-3 baseline | **+25pp accuracy · +45 days lead time** |
 | Projection horizon | **2026–2040** |
-| Climate scenarios | **SSP2-4.5 · SSP5-8.5** |
+| Climate projection source | **CORDEX-SA · IITM-RegCM4-4 · Copernicus CDS** |
+| Climate scenarios | **RCP 4.5 · RCP 8.5 / SSP2-4.5 · SSP5-8.5** |
 | Ensemble members | **20** |
 | Scalability | **Andhra Pradesh proven · 4 states ready** |
 
@@ -61,7 +64,7 @@ Anvīkṣaṇa is a mandal-level agricultural drought intelligence platform buil
 
 ## Architecture — 4 Layers
 
-```
+​```
 Layer 1 — Data Inputs (100% Real)
     DiCRA NDVI vectors (592 mandal polygons · 23 biweekly dates · 2025 + 2018)
     DiCRA Soil Moisture Index (576 mandals · 12 months)
@@ -78,21 +81,22 @@ Layer 2 — Modelling Engine
     Spatial cross-validation: GroupKFold (k=5), district hold-out
 
 Layer 3 — Forward Projections (2026–2040)
-    IPCC AR6 WG1 South Asia regional change factors
-    SSP2-4.5 (moderate) and SSP5-8.5 (high emissions) scenarios
+    CORDEX-SA downscaled RCM data (IITM-RegCM4-4, Copernicus CDS, 0.44° / ~50km)
+    RCP 4.5 (moderate) and RCP 8.5 (high emissions) scenarios
+    91 grid cells over Telangana · daily data aggregated to monthly/annual
     20-member ensemble uncertainty quantification
     District-level drought probability surfaces
 
 Layer 4 — Application & API Layer
-    9-page interactive Streamlit dashboard (live URL above)
+    11-page interactive Streamlit dashboard (live URL above)
     OGC CSAPI-compliant API endpoint (ogc_api.py)
     DiCRA 2.0 contribution layer (GeoJSON FeatureCollection)
     NABARD pre-loan risk scoring interface
-```
+​```
 
 ---
 
-## Dashboard Pages (9)
+## Dashboard Pages (11)
 
 | Page | Description |
 |------|-------------|
@@ -103,8 +107,18 @@ Layer 4 — Application & API Layer
 | 🌧️ NASA POWER & SPI | 25-year climate baseline · SPI-3/6 · drought climatology 2000–2024 |
 | 🚨 IMD Live Alerts | Real-time rainfall deficit · live validation against model predictions |
 | 🔮 2026–2040 Projections | Year slider · SSP scenario toggle · uncertainty bands · top at-risk districts |
+| 🌡️ CORDEX-SA Projections | Real downscaled RCM data · IITM-RegCM4-4 · temperature & rainfall trajectories |
 | 🤖 Model Validation | ROC-AUC · Brier · spatial CV methodology · data provenance |
+| 🌾 Crop Yield Risk Score | One number per mandal · traffic-light NABARD pre-loan decision tool |
 | 🔌 OGC API Explorer | Live GeoJSON responses · EDR position query · benchmark vs SPI-3 · AP scalability |
+
+---
+
+## Climate Projections — CORDEX-SA
+
+Drought projections (2026–2040) are driven by **CORDEX-SA downscaled regional climate model data** from the IITM-RegCM4-4 model (Indian Institute of Tropical Meteorology, Pune), sourced from the Copernicus Climate Data Store at 0.44° (~50km) resolution. Both RCP 4.5 and RCP 8.5 scenarios are integrated, covering 91 grid cells over Telangana, with daily data aggregated to monthly and annual time steps. This replaces IPCC scaling factors with physically-simulated regional climate output.
+
+**Data source:** CORDEX-SA · IITM-RegCM4-4 · MPI-M-MPI-ESM-MR · Copernicus CDS · DOI 10.24381/cds.bc91edc3
 
 ---
 
@@ -112,11 +126,11 @@ Layer 4 — Application & API Layer
 
 `ogc_api.py` implements a fully OGC-compliant REST API:
 
-```bash
+​```bash
 # Run locally
 pip install fastapi uvicorn
 uvicorn ogc_api:app --host 0.0.0.0 --port 8502 --reload
-```
+​```
 
 | Endpoint | Description |
 |----------|-------------|
@@ -170,31 +184,29 @@ The same pipeline runs on Andhra Pradesh with zero code changes:
 
 ## Repository Structure
 
-```
-anvikshana-nscic-prototype/
-├── dashboard.py                          # 9-page Streamlit dashboard (1,362 lines)
-├── ogc_api.py                            # OGC CSAPI-compliant FastAPI endpoint
-├── requirements.txt                      # Python dependencies
-├── mandal_ndvi_2018_full.csv             # 2018 historical NDVI (13,616 rows)
-├── district_comparison_2018_2025.csv     # 2018 vs 2025 district comparison
-├── AgST logo.png                         # Aganitha Space Technologies logo
-├── data/
-│   └── geojson_ndvi/                     # 23 × 2025 GeoJSON + CSVs + climate data
-├── outputs/
-│   ├── drought_projections_2026_2040.csv # 15-year district projections
-│   ├── feature_importance.csv            # RF model feature weights
-│   ├── validation_metrics.json           # Spatial CV results
-│   ├── benchmark_comparison.csv          # Anvīkṣaṇa vs SPI-3 (8 years)
-│   ├── benchmark_summary.json            # Benchmark summary stats
-│   ├── ap_drought_projections_2026_2040.csv  # AP scalability proof
-│   └── ap_summary.json                   # AP scalability summary
-└── scripts/
-    ├── 01_imd_data.py                    # IMD rainfall ingestion
-    ├── 02_dicra_data.py                  # DiCRA NDVI + SM processing
-    ├── 03_drought_model.py               # RF + GBR model training
-    ├── 04_benchmark.py                   # Benchmark vs SPI-3 baseline
-    └── 05_ap_scalability.py              # Andhra Pradesh scalability proof
-```
+​anvikshana-nscic-prototype/
+
+├── dashboard.py                        # 11-page Streamlit dashboard
+
+├── ogc_api.py                          # OGC CSAPI-compliant FastAPI endpoint
+
+├── requirements.txt                    # Python dependencies
+
+├── mandal_ndvi_2018_full.csv           # 2018 historical NDVI
+
+├── district_comparison_2018_2025.csv   # 2018 vs 2025 comparison
+
+├── cordex_telangana_monthly.csv        # CORDEX-SA climate data
+
+├── cordex_projections_page.py          # CORDEX-SA dashboard module
+
+├── AgST logo.png                       # Aganitha logo
+
+├── data/geojson_ndvi/                  # 2025 GeoJSON + climate CSVs
+
+├── outputs/                            # projections, metrics, benchmarks
+
+└── scripts/                            # data pipeline + model training
 
 ---
 
@@ -211,7 +223,7 @@ Aganitha Space Technologies is an active contributor to:
 
 ## IP & Legal
 
-- Core methodology: 4 Indian patents filed  · PCT filing planned
+- Core methodology: 4 Indian patents filed · PCT filing planned
 - Trademarks filed
 - This repository is licensed under MIT. Use requires attribution to Aganitha Space Technologies Pvt. Ltd.
 - *Patent pending. Platform name Anvīkṣaṇa is a trademark of Aganitha Space Technologies Pvt. Ltd.*
@@ -231,5 +243,5 @@ OGC CSAPI SWG · IEEE GRSS P4011 · W3C WoT WG · Royal Aeronautical Society (As
 
 ---
 
-*Data: DiCRA / UNDP India (Digital Public Good) · NASA POWER / GMAO · India Meteorological Department*
-*Model: Aganitha Space Technologies Pvt. Ltd. · NSCIC Stage 2 · May 2026*
+*Data: DiCRA / UNDP India (Digital Public Good) · NASA POWER / GMAO · India Meteorological Department · CORDEX-SA / Copernicus CDS*
+*Model: Aganitha Space Technologies Pvt. Ltd. · NSCIC Stage 3 Finalist · June 2026*
