@@ -1266,7 +1266,6 @@ is scoring 18/100 — and restructure that loan before default happens.
 
 This is the difference between **reactive insurance** and **proactive climate-resilient lending.**
     """)
-
 # ══════════════════════════════════════════════════════════════════════════
     # PAGE — CORDEX-SA CLIMATE PROJECTIONS
     # ══════════════════════════════════════════════════════════════════════════
