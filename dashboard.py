@@ -1365,8 +1365,8 @@ elif page == "🔌 OGC API Explorer":
     st.caption("OGC API-Features · OGC API-EDR · OGC CSAPI · W3C WoT · Standards-native drought intelligence")
 
     # ── Conformance banner ────────────────────────────────────────────────────
-   st.info(
-        "**Anvīkṣaṇa exposes its drought outputs as an OGC-compliant API** - "
+st.info(
+    "**Anvīkṣaṇa exposes its drought outputs as an OGC-compliant API** - "
         "ready for ingestion by DiCRA 2.0, NABARD systems, and any GIS platform "
         "supporting OGC API-Features or EDR. Aganitha Space Technologies is an "
         "active contributor to the OGC CSAPI Standards Working Group."
